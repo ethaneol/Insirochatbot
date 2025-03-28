@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Chatbot Interface</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="chat-container">
         <div class="chat-header">
@@ -13,15 +15,15 @@
             <div class="message bot-message">
                 <img src="{{ url_for('static', filename='xavier.jpeg') }}" class="bot-avatar" />
                 <div class="message-content">
-                    <p>Hi hi, welcome to the giga experience. Let us understand what help you need by clicking the buttons below.</p>
+                    <p>Please select from the options below.</p>
                     <div class="quick-replies">
-                        <button class="quick-reply">Number transfer/Porting</button>
-                        <button class="quick-reply">Promotions</button>
-                        <button class="quick-reply">Existing customers benefit</button>
-                        <button class="quick-reply">giga Plans & Add-ons</button>
-                        <button class="quick-reply">Others</button>
-                        <button class="quick-reply">SIM Replacement</button>
-                        <button class="quick-reply">Report Suspicious Activities</button>
+                        <button class="quick-reply">Main menu</button>
+                        <button class="quick-reply">giga Birthday Surprise</button>
+                        <button class="quick-reply">It's Raining Data!</button>
+                        <button class="quick-reply">Free #gigaSurprise</button>
+                        <button class="quick-reply">gigaBuddy data-only plan</button>
+                        <button class="quick-reply">Others about promotions</button>
+                        <button class="quick-reply">Refer-A-Friend</button>
                     </div>
                     <span class="timestamp">03:56 pm</span>
                 </div>
@@ -41,15 +43,42 @@
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', sender + '-message');
             messageDiv.innerHTML = `
-                <span class="math-inline">\{sender \=\=\= 'bot' ? '<img src\="bot\_avatar\.png" alt\="Bot Avatar" class\="bot\-avatar"\>' \: ''\}
-<div class\="message\-content"\>
-<p\></span>{message}</p>
+                ${sender === 'bot' ? '<img src="{{ url_for('static', filename='xavier.jpeg') }}" class="bot-avatar">' : ''}
+                <div class="message-content">
+                    <p>${message}</p>
                     <span class="timestamp">${new Date().toLocaleTimeString()}</span>
                 </div>
             `;
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        function displayNewOptions(options) {
+            const quickRepliesDiv = document.createElement('div');
+            quickRepliesDiv.classList.add('quick-replies');
+
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.classList.add('quick-reply');
+                button.textContent = option;
+                button.addEventListener('click', () => {
+                    userInput.value = option;
+                    sendButton.click();
+                });
+                quickRepliesDiv.appendChild(button);
+            });
+
+            chatMessages.appendChild(quickRepliesDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        document.querySelectorAll('.quick-reply').forEach(button => {
+            button.addEventListener('click', () => {
+                const buttonValue = button.textContent;
+                userInput.value = buttonValue;
+                sendButton.click();
+            });
+        });
 
         sendButton.addEventListener('click', () => {
             const message = userInput.value;
@@ -67,9 +96,17 @@
                     .then(response => response.json())
                     .then(data => {
                         addMessage(data.response, 'bot');
+                        if (data.new_options && data.new_options.length > 0) {
+                            displayNewOptions(data.new_options);
+                        }
                     })
                     .catch(error => {
-                        console
-        </script>
-    </body>
+                        console.error('Error:', error);
+                        addMessage('Sorry, there was an error.', 'bot');
+                    });
+            }
+        });
+    </script>
+</body>
+
 </html>
