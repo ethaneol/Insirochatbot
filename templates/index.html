@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Chatbot Interface</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            All chat transcripts are monitored & stored for quality control purposes.
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <img src="{{ url_for('static', filename='xavier.jpeg') }}" class="bot-avatar" />
+                <div class="message-content">
+                    <p>Hi hi, welcome to the giga experience. Let us understand what help you need by clicking the buttons below.</p>
+                    <div class="quick-replies">
+                        <button class="quick-reply">Number transfer/Porting</button>
+                        <button class="quick-reply">Promotions</button>
+                        <button class="quick-reply">Existing customers benefit</button>
+                        <button class="quick-reply">giga Plans & Add-ons</button>
+                        <button class="quick-reply">Others</button>
+                        <button class="quick-reply">SIM Replacement</button>
+                        <button class="quick-reply">Report Suspicious Activities</button>
+                    </div>
+                    <span class="timestamp">03:56 pm</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your question here...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        function addMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender + '-message');
+            messageDiv.innerHTML = `
+                <span class="math-inline">\{sender \=\=\= 'bot' ? '<img src\="bot\_avatar\.png" alt\="Bot Avatar" class\="bot\-avatar"\>' \: ''\}
+<div class\="message\-content"\>
+<p\></span>{message}</p>
+                    <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendButton.addEventListener('click', () => {
+            const message = userInput.value;
+            if (message) {
+                addMessage(message, 'user');
+                userInput.value = '';
+
+                fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        addMessage(data.response, 'bot');
+                    })
+                    .catch(error => {
+                        console
+        </script>
+    </body>
+</html>
