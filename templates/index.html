@@ -34,6 +34,7 @@
             <button id="send-button">Send</button>
         </div>
     </div>
+
     <script>
         const chatMessages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
@@ -61,12 +62,8 @@
         messageParagraph.innerHTML = message; // Changed from textContent to innerHTML
         messageContent.appendChild(messageParagraph);
 
-        const timestampSpan = document.createElement('span');
-        timestampSpan.classList.add('timestamp');
-        timestampSpan.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
-        messageContent.appendChild(timestampSpan);
-
         chatMessages.scrollTop = chatMessages.scrollHeight;
+
     }
 
         function displayNewOptions(options) {
@@ -87,6 +84,11 @@
             const lastBotMessage = chatMessages.lastElementChild;
             const messageContentDiv = lastBotMessage.querySelector('.message-content');
             messageContentDiv.appendChild(quickRepliesDiv);
+
+            const timestampSpan = document.createElement('span');
+            timestampSpan.classList.add('timestamp');
+            timestampSpan.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+            messageContentDiv.appendChild(timestampSpan);
 
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
