@@ -16,7 +16,7 @@ pairs = [
         ["I'm a chatbot.", "You can call me Xavier."]
     ],
     [
-        r"bye|goodbye|see you later",
+        r"bye|goodbye|see you",
         ["Goodbye!", "See you later alligator!", "Bye!"]
     ],
 ]
