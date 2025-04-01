@@ -40,36 +40,34 @@
         const sendButton = document.getElementById('send-button');
 
         function addMessage(message, sender) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message', sender + '-message');
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', sender + '-message');
 
-            let messageContent;
-            if (sender === 'bot' && chatMessages.lastElementChild && chatMessages.lastElementChild.classList.contains('bot-message')) {
-                // If the last message is a bot message, append to it
-                messageContent = chatMessages.lastElementChild.querySelector('.message-content');
-            } else {
-                // Otherwise, create a new message content
-                messageContent = document.createElement('div');
-                messageContent.classList.add('message-content');
+        let messageContent;
+        if (sender === 'bot' && chatMessages.lastElementChild && chatMessages.lastElementChild.classList.contains('bot-message')) {
+            messageContent = chatMessages.lastElementChild.querySelector('.message-content');
+        } else {
+            messageContent = document.createElement('div');
+            messageContent.classList.add('message-content');
 
-                if (sender === 'bot') {
-                    messageDiv.innerHTML = `<img src="insiro.jpeg" class="bot-avatar">`;
-                }
-                messageDiv.appendChild(messageContent);
-                chatMessages.appendChild(messageDiv);
+            if (sender === 'bot') {
+                messageDiv.innerHTML = `<img src="insiro.jpeg" class="bot-avatar">`;
             }
-
-            const messageParagraph = document.createElement('p');
-            messageParagraph.textContent = message;
-            messageContent.appendChild(messageParagraph);
-
-            const timestampSpan = document.createElement('span');
-            timestampSpan.classList.add('timestamp');
-            timestampSpan.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
-            messageContent.appendChild(timestampSpan);
-
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            messageDiv.appendChild(messageContent);
+            chatMessages.appendChild(messageDiv);
         }
+
+        const messageParagraph = document.createElement('p');
+        messageParagraph.innerHTML = message; // Changed from textContent to innerHTML
+        messageContent.appendChild(messageParagraph);
+
+        const timestampSpan = document.createElement('span');
+        timestampSpan.classList.add('timestamp');
+        timestampSpan.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+        messageContent.appendChild(timestampSpan);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
         function displayNewOptions(options) {
             const quickRepliesDiv = document.createElement('div');

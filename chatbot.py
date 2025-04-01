@@ -34,7 +34,7 @@ button_options = {
 }
 
 option_responses = {
-    'option a - contact us': 'Our email is cso@insiro.com',
+    'option a - contact us': 'Our email is <a href="https://cso.insiro.com" target="_blank">cso@insiro.com</a>',
     'option b - address': 'Our address is 49 Tannery Lane, #03-05 S(347796)',
     'option c - hours': 'We are open from 9 AM to 5 PM',
     'option d - data plans': 'Check our website for data plans',
@@ -53,7 +53,7 @@ option_responses = {
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', option_responses=option_responses)
 
 
 @app.route('/button_action', methods=['POST'])
