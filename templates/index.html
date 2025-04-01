@@ -13,7 +13,7 @@
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
-                <img src="{{ url_for('static', filename='insiro.jpeg') }}" class="bot-avatar" />
+                <img src="insiro.jpeg" class="bot-avatar" />
                 <div class="message-content">
                     <p>Please select from the options below.</p>
                     <div class="quick-replies">
@@ -25,7 +25,7 @@
                         <button class="quick-reply">Others about promotions</button>
                         <button class="quick-reply">Refer-A-Friend</button>
                     </div>
-                    <span class="timestamp">00:00 pm</span>
+                    <span class="timestamp"></span>
                 </div>
             </div>
         </div>
@@ -42,14 +42,32 @@
         function addMessage(message, sender) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', sender + '-message');
-            messageDiv.innerHTML = `
-                ${sender === 'bot' ? '<img src="{{ url_for('static', filename='insiro.jpeg') }}" class="bot-avatar">' : ''}
-                <div class="message-content">
-                    <p>${message}</p>
-                   <span class="timestamp">${new Date().toLocaleTimeString(undefined, {hour: '2-digit', minute: '2-digit'})}</span>
-                </div>
-            `;
-            chatMessages.appendChild(messageDiv);
+
+            let messageContent;
+            if (sender === 'bot' && chatMessages.lastElementChild && chatMessages.lastElementChild.classList.contains('bot-message')) {
+                // If the last message is a bot message, append to it
+                messageContent = chatMessages.lastElementChild.querySelector('.message-content');
+            } else {
+                // Otherwise, create a new message content
+                messageContent = document.createElement('div');
+                messageContent.classList.add('message-content');
+
+                if (sender === 'bot') {
+                    messageDiv.innerHTML = `<img src="insiro.jpeg" class="bot-avatar">`;
+                }
+                messageDiv.appendChild(messageContent);
+                chatMessages.appendChild(messageDiv);
+            }
+
+            const messageParagraph = document.createElement('p');
+            messageParagraph.textContent = message;
+            messageContent.appendChild(messageParagraph);
+
+            const timestampSpan = document.createElement('span');
+            timestampSpan.classList.add('timestamp');
+            timestampSpan.textContent = new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+            messageContent.appendChild(timestampSpan);
+
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
@@ -68,9 +86,29 @@
                 quickRepliesDiv.appendChild(button);
             });
 
-            chatMessages.appendChild(quickRepliesDiv);
+            const lastBotMessage = chatMessages.lastElementChild;
+            const messageContentDiv = lastBotMessage.querySelector('.message-content');
+            messageContentDiv.appendChild(quickRepliesDiv);
+
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        function updateTimestamp() {
+        const timestampSpan = document.querySelector('.timestamp');
+
+        const now = new Date(); // Get the current time from your computer
+
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+
+        timestampSpan.textContent = `${String(formattedHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')} ${ampm}`;
+    }
+
+    // Update the timestamp initially and then every minute
+    updateTimestamp();
+    setInterval(updateTimestamp, 60000); // Update every minute.
 
         document.querySelectorAll('.quick-reply').forEach(button => {
             button.addEventListener('click', () => {
