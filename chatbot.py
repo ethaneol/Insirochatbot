@@ -13,7 +13,7 @@ pairs = [
     ],
     [
         r"what is your name?",
-        ["I'm a chatbot.", "You can call me bot."]
+        ["I'm a chatbot.", "You can call me Xavier."]
     ],
     [
         r"bye|goodbye|see you later",
