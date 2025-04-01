@@ -84,7 +84,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["I'm not sure I understand.", "Could you please rephrase that?"])
+            response = random.choice(["I'm not sure I understand.", "You are gay"])
 
         if user_message in option_responses:
             return jsonify({
