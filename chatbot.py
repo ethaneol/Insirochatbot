@@ -22,11 +22,10 @@ pairs = [
 ]
 
 chatbot = Chat(pairs, reflections)
-
 button_options = {
-    'main menu': ['niga Birthday Surprise', 'It\'s Raining Data!', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
-    'niga birthday surprise': ['Option A - Contact Us', 'Option B - Address', 'Option C - Hours'],
-    'it\'s raining data!': ['Option D - Data Plans', 'Option E - Data Usage'],
+    'main menu': ['bala2', 'Questions about data', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
+    'bala2': ['Contact Us', 'Option B - Address', 'Option C - Hours'],
+    'questions about data': ['Option D - Data Plans', 'Option E - Data Usage'],
     'free #gigasurprise': ['Option F - Promo Info', 'Option G - Eligibility', 'Option H - How to Claim'],
     'gigabuddy data-only plan': ['Option I - Plan Details', 'Option J - Activation'],
     'others about promotions': ['Option K - Current Promos', 'Option L - Past Promos', 'Option M - Future Promos'],
@@ -34,7 +33,8 @@ button_options = {
 }
 
 option_responses = {
-    'option a - contact us': 'Email us at <a href="mailto: cso.insiro.com" target="_blank">cso@insiro.com</a>',
+    'contact us': 'Email us at <a href="mailto: cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
+                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
     'option b - address': 'Our address is 49 Tannery Lane, #03-05 S(347796)',
     'option c - hours': 'We are open from 9 AM to 6 PM',
     'option d - data plans': 'Check our <a href="https://www.starhub.com/personal/broadband.html?cid=ps-18B-BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS-201901-alwayson-Broadband+(Ultra+Speed)&utm_medium=Paid_Search&utm_source=alwayson&utm_campaign=BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS&utm_content=Broadband+(Ultra+Speed)&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAjw-qi_BhBxEiwAkxvbkDxnUpKQogh4zjVw9zVCyS1t4gUKJPFW297rCv7E0UQsyRSb8Rf1LBoCRl8QAvD_BwE" target="_blank">Website</a> for data plans!',
