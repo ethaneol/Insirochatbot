@@ -25,7 +25,7 @@
                         <button class="quick-reply">Others about promotions</button>
                         <button class="quick-reply">Refer-A-Friend</button>
                     </div>
-                    <span class="timestamp">03:56 pm</span>
+                    <span class="timestamp">00:00 pm</span>
                 </div>
             </div>
         </div>
@@ -43,10 +43,10 @@
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', sender + '-message');
             messageDiv.innerHTML = `
-                ${sender === 'bot' ? '<img src="{{ url_for('static', filename='xavier.jpeg') }}" class="bot-avatar">' : ''}
+                ${sender === 'bot' ? '<img src="{{ url_for('static', filename='insiro.jpeg') }}" class="bot-avatar">' : ''}
                 <div class="message-content">
                     <p>${message}</p>
-                    <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                   <span class="timestamp">${new Date().toLocaleTimeString(undefined, {hour: '2-digit', minute: '2-digit'})}</span>
                 </div>
             `;
             chatMessages.appendChild(messageDiv);
