@@ -24,31 +24,31 @@ pairs = [
 chatbot = Chat(pairs, reflections)
 button_options = {
     'main menu': ['bala2', 'Questions about data', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
-    'bala2': ['Contact Us', 'Option B - Address', 'Option C - Hours'],
-    'questions about data': ['Option D - Data Plans', 'Option E - Data Usage'],
-    'free #gigasurprise': ['Option F - Promo Info', 'Option G - Eligibility', 'Option H - How to Claim'],
-    'gigabuddy data-only plan': ['Option I - Plan Details', 'Option J - Activation'],
-    'others about promotions': ['Option K - Current Promos', 'Option L - Past Promos', 'Option M - Future Promos'],
-    'refer-a-friend': ['Option N - Referral Link', 'Option O - Referral Rules']
+    'bala2': ['Contact Us', 'Address', 'Hours'],
+    'questions about data': ['Data Plans', 'Data Usage'],
+    'free #gigasurprise': ['Promo Info', 'Eligibility', 'How to Claim'],
+    'gigabuddy data-only plan': ['Plan Details', 'Activation'],
+    'others about promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
+    'refer-a-friend': ['Referral Link', 'Referral Rules']
 }
 
 option_responses = {
     'contact us': 'Email us at <a href="mailto: cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
-    'option b - address': 'Our address is 49 Tannery Lane, #03-05 S(347796)',
-    'option c - hours': 'We are open from 9 AM to 6 PM',
-    'option d - data plans': 'Check our <a href="https://www.starhub.com/personal/broadband.html?cid=ps-18B-BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS-201901-alwayson-Broadband+(Ultra+Speed)&utm_medium=Paid_Search&utm_source=alwayson&utm_campaign=BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS&utm_content=Broadband+(Ultra+Speed)&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAjw-qi_BhBxEiwAkxvbkDxnUpKQogh4zjVw9zVCyS1t4gUKJPFW297rCv7E0UQsyRSb8Rf1LBoCRl8QAvD_BwE" target="_blank">Website</a> for data plans!',
-    'option e - data usage': 'Use our StarHub app to view data usage',
-    'option f - promo info': 'This promo is for new StarHub broadband users',
-    'option g - eligibility': 'You must be 18+ to claim this',
-    'option h - how to claim': 'Enter the code at checkout',
-    'option i - plan details': 'Contact us at 999 for more enquires',
-    'option j - activation': 'Visit our <a href="https://insiro.com" target="_blank">store</a> to activate',
-    'option k - current promos': 'We have a 20% discount this week',
-    'option l - past promos': 'Past promos are listed on our site',
-    'option m - future promos': 'We will announce future promos soon',
-    'option n - referral link': 'Use this link to refer a friend',
-    'option o - referral rules': 'Referral rules are on our FAQ'
+    'address': 'Our address is 49 Tannery Lane, #03-05 S(347796)',
+    'hours': 'We are open from 9 AM to 6 PM',
+    'data plans': 'Check our <a href="https://www.starhub.com/personal/broadband.html?cid=ps-18B-BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS-201901-alwayson-Broadband+(Ultra+Speed)&utm_medium=Paid_Search&utm_source=alwayson&utm_campaign=BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS&utm_content=Broadband+(Ultra+Speed)&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAjw-qi_BhBxEiwAkxvbkDxnUpKQogh4zjVw9zVCyS1t4gUKJPFW297rCv7E0UQsyRSb8Rf1LBoCRl8QAvD_BwE" target="_blank">Website</a> for data plans!',
+    'data usage': 'Use our StarHub app to view data usage',
+    'promo info': 'This promo is for new StarHub broadband users',
+    'eligibility': 'You must be 18+ to claim this',
+    'how to claim': 'Enter the code at checkout',
+    'plan details': 'Contact us at 999 for more enquires',
+    'activation': 'Visit our <a href="https://insiro.com" target="_blank">store</a> to activate',
+    'current promos': 'We have a 20% discount this week',
+    'past promos': 'Past promos are listed on our site',
+    'future promos': 'We will announce future promos soon',
+    'referral link': 'Use this link to refer a friend',
+    'referral rules': 'Referral rules are on our FAQ'
 }
 
 @app.route('/')
