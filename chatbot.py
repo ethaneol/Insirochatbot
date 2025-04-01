@@ -94,7 +94,7 @@ def chat():
 
         if user_message in button_options:
             return jsonify({
-                'response': f'You typed: {data["message"]}',
+                'response': f'{data["message"]}',
                 'new_options': button_options.get(user_message, [])
             })
 

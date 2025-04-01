@@ -75,27 +75,27 @@
 
     }
 
-        function displayNewOptions(options) {
-            const quickRepliesDiv = document.createElement('div');
-            quickRepliesDiv.classList.add('quick-replies');
+// ... (Your existing JavaScript code) ...
 
-            options.forEach(option => {
-                const button = document.createElement('button');
-                button.classList.add('quick-reply');
-                button.textContent = option;
-                button.addEventListener('click', () => {
-                    userInput.value = option;
-                    sendButton.click();
-                });
-                quickRepliesDiv.appendChild(button);
-            });
+function displayNewOptions(options) {
+    const quickRepliesDiv = document.createElement('div');
+    quickRepliesDiv.classList.add('quick-replies');
 
-            const lastBotMessage = chatMessages.lastElementChild;
-            const messageContentDiv = lastBotMessage.querySelector('.message-content');
-            messageContentDiv.appendChild(quickRepliesDiv);
+    options.forEach(option => {
+        const button = document.createElement('button');
+        button.classList.add('quick-reply');
+        button.textContent = option;
+        button.addEventListener('click', () => {
+            userInput.value = option;
+            sendButton.click();
+        });
+        quickRepliesDiv.appendChild(button);
+    });
 
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+    // Append the quick-replies div *after* the message div
+    chatMessages.appendChild(quickRepliesDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
         function updateTimestamp() {
         const timestampSpan = document.querySelector('.timestamp');

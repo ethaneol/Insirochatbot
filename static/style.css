@@ -11,7 +11,7 @@ body {
 }
 
 .chat-container {
-    width: 350px;
+    width: 450px;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -43,7 +43,7 @@ body {
 }
 
 .bot-message {
-    background-color: #e0f7fa;
+    background-color: #1ed760;
     align-self: flex-start;
     border-radius: 20px 20px 20px 5px;
 }
@@ -85,18 +85,18 @@ body {
 }
 
 .quick-reply {
-    background-color: #fce4ec;
-    border: none;
+    background-color: #1ed760;
+    border: 1px solid black;
     padding: 10px 15px;
     margin: 5px;
-    border-radius: 20px;
+    border-radius: 50px;
     cursor: pointer;
     font-size: 13px;
     color: #333;
 }
 
 .quick-reply:hover {
-    background-color: #f8bbd0;
+    background-color: white;
 }
 
 .chat-input {
