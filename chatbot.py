@@ -34,8 +34,8 @@ button_options = {
 }
 
 option_responses = {
-    'option a - contact us': 'Our email is support@example.com',
-    'option b - address': 'Our address is 123 Main St, Anytown',
+    'option a - contact us': 'Our email is cso@insiro.com',
+    'option b - address': 'Our address is 49 Tannery Lane, #03-05 S(347796)',
     'option c - hours': 'We are open from 9 AM to 5 PM',
     'option d - data plans': 'Check our website for data plans',
     'option e - data usage': 'Use our app to view data usage',
