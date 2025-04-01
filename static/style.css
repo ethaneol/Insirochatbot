@@ -11,7 +11,7 @@ body {
 }
 
 .chat-container {
-    width: 450px;
+    width: 400px;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -93,6 +93,7 @@ body {
     cursor: pointer;
     font-size: 13px;
     color: #333;
+    font-family: 'Poppins', sans-serif
 }
 
 .quick-reply:hover {
