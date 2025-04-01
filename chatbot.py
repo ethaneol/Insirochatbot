@@ -17,15 +17,15 @@ pairs = [
     ],
     [
         r"bye|goodbye|see you later",
-        ["Goodbye!", "See you later!", "Bye!"]
+        ["Goodbye!", "See you later alligator!", "Bye!"]
     ],
 ]
 
 chatbot = Chat(pairs, reflections)
 
 button_options = {
-    'main menu': ['giga Birthday Surprise', 'It\'s Raining Data!', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
-    'giga birthday surprise': ['Option A - Contact Us', 'Option B - Address', 'Option C - Hours'],
+    'main menu': ['niga Birthday Surprise', 'It\'s Raining Data!', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
+    'niga birthday surprise': ['Option A - Contact Us', 'Option B - Address', 'Option C - Hours'],
     'it\'s raining data!': ['Option D - Data Plans', 'Option E - Data Usage'],
     'free #gigasurprise': ['Option F - Promo Info', 'Option G - Eligibility', 'Option H - How to Claim'],
     'gigabuddy data-only plan': ['Option I - Plan Details', 'Option J - Activation'],
@@ -84,7 +84,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["I'm not sure I understand.", "You are gay"])
+            response = random.choice(["Why did you redeem it!?", "You are gay"])
 
         if user_message in option_responses:
             return jsonify({
