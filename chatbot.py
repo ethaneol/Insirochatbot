@@ -73,7 +73,7 @@ option_responses = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', option_responses=option_responses)
+    return render_template('modified.html', option_responses=option_responses)
 
 
 @app.route('/button_action', methods=['POST'])
