@@ -38,7 +38,7 @@ option_responses = {
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
     'hours': 'We are open from 9 AM to 6 PM',
     'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n'
-                       '<p>I’m Xavier! You can call me whatever you like. Do you have a name you prefer to go by? 😊</p>',
+                       '<p>I’m Xavier! But you can call me baby. Do you have a name you prefer to go by? 😊</p>',
     'data usage': 'Use our StarHub app to view data usage',
     'promo info': 'This promo is for new StarHub broadband users',
     'eligibility': 'You must be 18+ to claim this',
