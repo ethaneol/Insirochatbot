@@ -26,7 +26,7 @@ pairs = [
 
     [
         r"thank you",
-        ["No need to thank me", "I'm trying to be more humble"]
+        ["No need to thank me", "I'm trying to be more humble", "No worries my niga"]
     ]
 ]
 
