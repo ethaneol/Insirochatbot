@@ -23,10 +23,10 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['General Enquiries', 'About Us', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
+    'main menu': ['General Enquiries', 'About Us', 'Services', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Profile Picture', 'Data Usage'],
-    'free #gigasurprise': ['Promo Info', 'Eligibility', 'How to Claim'],
+    'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'gigabuddy data-only plan': ['Plan Details', 'Activation'],
     'others about promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'refer-a-friend': ['Referral Link', 'Referral Rules']
