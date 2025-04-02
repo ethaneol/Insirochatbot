@@ -104,7 +104,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["Why did you redeem it!?", "You are gay"])
+            response = random.choice(["Why did you redeem it!?"])
 
         if user_message in option_responses:
             return jsonify({
