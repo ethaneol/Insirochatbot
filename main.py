@@ -3,12 +3,12 @@ import logging
 import datetime
 import os
 
-def log_pycharm_packages(log_file_path="pycharm_packages.log"):
+def log_pycharm_packages(log_file_path="requirements.txt"):
     """
     Logs the installed packages in the PyCharm environment to a specified file, clearing previous entries.
 
     Args:
-        log_file_path (str): The path to the log file. Defaults to "pycharm_packages.log".
+        log_file_path (str): The path to the log file. Defaults to "requirements.txt".
     """
     try:
         # Check if pip is installed
