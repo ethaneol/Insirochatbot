@@ -23,9 +23,9 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['bala2', 'Questions about data', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
-    'bala2': ['Contact Us', 'Address', 'Hours'],
-    'questions about data': ['Data Plans', 'Data Usage'],
+    'main menu': ['General Enquiries', 'About Us', 'Free #gigaSurprise', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
+    'general enquiries': ['Contact Us', 'Address', 'Hours'],
+    'about us': ['Profile Picture', 'Data Usage'],
     'free #gigasurprise': ['Promo Info', 'Eligibility', 'How to Claim'],
     'gigabuddy data-only plan': ['Plan Details', 'Activation'],
     'others about promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
@@ -37,7 +37,8 @@ option_responses = {
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
     'hours': 'We are open from 9 AM to 6 PM',
-    'data plans': 'Check our <a href="https://www.starhub.com/personal/broadband.html?cid=ps-18B-BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS-201901-alwayson-Broadband+(Ultra+Speed)&utm_medium=Paid_Search&utm_source=alwayson&utm_campaign=BB+%7C+Always+On+%7C+Awa+%7C+Broadband+Always+on_Broadband_SEM_GG_KWDT_RSA_CAT_PMA_AW_CPC_en_11583325SGMS143884-Broadband+Always+on_010124_311224_StarHub+%7C+CBG+%7C+PROS+%7C+SG+%7C+AO+%7C+PS&utm_content=Broadband+(Ultra+Speed)&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAjw-qi_BhBxEiwAkxvbkDxnUpKQogh4zjVw9zVCyS1t4gUKJPFW297rCv7E0UQsyRSb8Rf1LBoCRl8QAvD_BwE" target="_blank">Website</a> for data plans!',
+    'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n'
+                       '<p>I’m Xavier! You can call me whatever you like. Do you have a name you prefer to go by? 😊</p>',
     'data usage': 'Use our StarHub app to view data usage',
     'promo info': 'This promo is for new StarHub broadband users',
     'eligibility': 'You must be 18+ to claim this',
