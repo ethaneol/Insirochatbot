@@ -19,6 +19,10 @@ pairs = [
         r"bye|goodbye|see you",
         ["Goodbye!", "See you later alligator!", "Bye!"]
     ],
+    [
+        r"gay|you gay?|daddy",
+        ["Get some help"]
+    ],
 ]
 
 chatbot = Chat(pairs, reflections)
