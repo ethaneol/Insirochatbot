@@ -9,10 +9,10 @@ CORS(app)
 pairs = [
     [
         r"hi|hello|hey",
-        ["Hello!", "Hi there!", "Hey!"]
+        ["Hello!", "Hi bbg!", "Hey!"]
     ],
     [
-        r"what is your name?",
+        r"what is your name?|name?",
         ["I'm a chatbot.", "You can call me Xavier."]
     ],
     [
