@@ -23,6 +23,11 @@ pairs = [
         r"gay|you gay?|daddy",
         ["Get some help"]
     ],
+
+    [
+        r"thank you",
+        ["No need to thank me", "I'm trying to be more humble"]
+    ]
 ]
 
 chatbot = Chat(pairs, reflections)
