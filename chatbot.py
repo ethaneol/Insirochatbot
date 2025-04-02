@@ -23,31 +23,48 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions'],
+    'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Profile Picture', 'Data Usage'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
-    'frequently asked questions': ['StarHub FAQ', 'Still require more help?']
+    'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
+    'join us': ['Job Scope', 'Interested?']
 }
 
 option_responses = {
     'contact us': 'Email us at <a href="mailto: cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
+
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
+
     'hours': 'We are open from 9 AM to 6 PM',
+
     'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
                        '<p>I’m Xavier! But you can call me baby. Do you have a name you prefer to go by? 😊</p>',
+
     'data usage': 'Use our StarHub app to view data usage',
+
     'promo info': 'This promo is for new StarHub broadband users',
+
     'eligibility': 'You must be 18+ to claim this',
+
     'how to claim': 'Enter the code at checkout',
+
     'current promos': 'We have a 20% discount this week',
+
     'past promos': 'Past promos are listed on our site',
+
     'future promos': 'We will announce future promos soon',
+
     'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
     'still require more help?': 'Contact us at <br>'
-                                ' <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>'
+                                ' <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
+
+    'job scope': '<null>',
+
+    'interested?': 'Drop your CV at <br>'
+                   '<a href="mailto:normila@insiro.com" target="_blank">normila@insiro.com</a>',
 }
 
 @app.route('/')
