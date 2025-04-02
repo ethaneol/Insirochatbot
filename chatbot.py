@@ -23,12 +23,12 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['General Enquiries', 'About Us', 'Services', 'Others about promotions', 'Refer-A-Friend'],
+    'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'FAQ'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Profile Picture', 'Data Usage'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
-    'others about promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
-    'refer-a-friend': ['Referral Link', 'Referral Rules']
+    'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
+    'faq': ['StarHub FAQ', 'Still require more help?']
 }
 
 option_responses = {
@@ -45,8 +45,8 @@ option_responses = {
     'current promos': 'We have a 20% discount this week',
     'past promos': 'Past promos are listed on our site',
     'future promos': 'We will announce future promos soon',
-    'referral link': 'Visit our <a href="https://insiro.com" target="_blank">store</a> to activate',
-    'referral rules': 'Referral rules are on our FAQ'
+    'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
+    'still require more help?': 'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>'
 }
 
 @app.route('/')
