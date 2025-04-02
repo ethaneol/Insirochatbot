@@ -23,12 +23,12 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'FAQ'],
+    'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Profile Picture', 'Data Usage'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
-    'faq': ['StarHub FAQ', 'Still require more help?']
+    'frequently asked questions': ['StarHub FAQ', 'Still require more help?']
 }
 
 option_responses = {
@@ -46,7 +46,7 @@ option_responses = {
     'past promos': 'Past promos are listed on our site',
     'future promos': 'We will announce future promos soon',
     'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
-    'still require more help?': 'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>'
+    'still require more help?': 'Contact us at \n <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>'
 }
 
 @app.route('/')
