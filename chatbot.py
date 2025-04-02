@@ -23,11 +23,10 @@ pairs = [
 
 chatbot = Chat(pairs, reflections)
 button_options = {
-    'main menu': ['General Enquiries', 'About Us', 'Services', 'gigaBuddy data-only plan', 'Others about promotions', 'Refer-A-Friend'],
+    'main menu': ['General Enquiries', 'About Us', 'Services', 'Others about promotions', 'Refer-A-Friend'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Profile Picture', 'Data Usage'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
-    'gigabuddy data-only plan': ['Plan Details', 'Activation'],
     'others about promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'refer-a-friend': ['Referral Link', 'Referral Rules']
 }
@@ -43,12 +42,10 @@ option_responses = {
     'promo info': 'This promo is for new StarHub broadband users',
     'eligibility': 'You must be 18+ to claim this',
     'how to claim': 'Enter the code at checkout',
-    'plan details': 'Contact us at 999 for more enquires',
-    'activation': 'Visit our <a href="https://insiro.com" target="_blank">store</a> to activate',
     'current promos': 'We have a 20% discount this week',
     'past promos': 'Past promos are listed on our site',
     'future promos': 'We will announce future promos soon',
-    'referral link': 'Use this link to refer a friend',
+    'referral link': 'Visit our <a href="https://insiro.com" target="_blank">store</a> to activate',
     'referral rules': 'Referral rules are on our FAQ'
 }
 
