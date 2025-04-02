@@ -17,16 +17,11 @@ pairs = [
     ],
     [
         r"bye|goodbye|see you",
-        ["Goodbye!", "See you later alligator!", "Bye!"]
+        ["Goodbye!", "See you later", "Bye!"]
     ],
-    [
-        r"gay|you gay?|daddy",
-        ["Get some help"]
-    ],
-
     [
         r"thank you",
-        ["No need to thank me", "I'm trying to be more humble", "No worries my niga"]
+        ["No need to thank me", "I'm trying to be more humble"]
     ]
 ]
 
@@ -50,7 +45,7 @@ option_responses = {
     'hours': 'We are open from 9 AM to 6 PM',
 
     'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
-                       '<p>I’m Xavier! But you can call me baby. Do you have a name you prefer to go by? 😊</p>',
+                       '<p>I’m Xavier! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
 
     'data usage': 'Use our StarHub app to view data usage',
 
