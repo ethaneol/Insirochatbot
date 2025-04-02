@@ -75,7 +75,12 @@
 
     }
 
-// ... (Your existing JavaScript code) ...
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevents form submission (if inside a form)
+        sendButton.click(); // Triggers the send button click event
+    }
+});
 
 function displayNewOptions(options) {
     const quickRepliesDiv = document.createElement('div');

@@ -37,7 +37,7 @@ option_responses = {
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
     'hours': 'We are open from 9 AM to 6 PM',
-    'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n'
+    'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
                        '<p>I’m Xavier! But you can call me baby. Do you have a name you prefer to go by? 😊</p>',
     'data usage': 'Use our StarHub app to view data usage',
     'promo info': 'This promo is for new StarHub broadband users',
