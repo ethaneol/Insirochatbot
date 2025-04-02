@@ -22,8 +22,21 @@ pairs = [
     [
         r"thank you",
         ["No need to thank me", "I'm trying to be more humble"]
+    ],
+    [
+        r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
+        ["Our office is located at <a href='https://maps.app.goo.gl/ce1hsqtkCuzyuJak6' target='_blank' style='color: white'>49 Tannery Lane</a>."]
+    ],
+    [
+        r".*phon(e|es|ed).*|.*numbe(r|rs).*|.*hotline.*|.*contac(t|ted|).*",
+        ["Our office hotline is <a href='tel:+65 6323 1773' target='_blank' style='color:white'>+65-6323-1773</a>"]
+    ],
+    [
+        r".*broadband.*|.*wifi.*|.*internet.*|.*network.*|.*lan.*|.*wireless.*|.*network.*",
+        ["View Starhub's broadband plans <a href='https://www.starhub.com/personal/broadband.html#plans' target='_blank' style='color: white'>here</a>."]
+    ],
     ]
-]
+
 
 chatbot = Chat(pairs, reflections)
 button_options = {
@@ -37,7 +50,7 @@ button_options = {
 }
 
 option_responses = {
-    'contact us': 'Email us at <a href="mailto: cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
+    'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
