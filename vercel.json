@@ -13,8 +13,8 @@
       "dest": "chatbot.py"
     },
     {
-      "src": "/chat",
-      "dest": "chatbot.py"
+      "src": "/",
+      "dest": "/chatbot.py"
     },
     {
       "src": "/(.*)",
