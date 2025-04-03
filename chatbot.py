@@ -33,7 +33,7 @@ pairs = [
     ],
     [
         r".*broadband.*|.*wifi.*|.*internet.*|.*network.*|.*lan.*|.*wireless.*|.*network.*",
-        ["View Starhub's broadband plans <a href='https://www.starhub.com/personal/broadband.html#plans' target='_blank' style='color: white'>here</a>."]
+        ["View Starhub's broadband plans <a href='https://www.starhub.com/personal/broadband.html#plans' target='_blank' style='color: dodgerblue'>here</a>."]
     ],
     ]
 
@@ -60,7 +60,9 @@ option_responses = {
     'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
                        '<p>I’m Xavier! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
 
-    'data usage': 'Use our StarHub app to view data usage',
+    'data usage': 'Use our StarHub app to view data usage <br><br>'
+                  '<a href="https://play.google.com/store/apps/details?id=com.starhub.csselfhelp" alt="Google Play" target="_blank"><img src="/static/gplay.jpg" class="data-usage-image"></a> <br>'
+                  '<a href="https://apps.apple.com/sg/app/starhub-app/id470460379" alt="Apple Store" target="_blank"><img src="/static/apple.jpg" class="data-usage-image"></a>',
 
     'promo info': 'This promo is for new StarHub broadband users',
 
