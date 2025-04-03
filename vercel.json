@@ -9,11 +9,11 @@
       "dest": "templates/index.html"
     },
     {
-      "src": "/button_action",
+      "src": "/",
       "dest": "chatbot.py"
     },
     {
-      "src": "/chat",
+      "src": "/",
       "dest": "chatbot.py"
     },
     {
@@ -22,4 +22,4 @@
     }
   ]
 }
-}
+
