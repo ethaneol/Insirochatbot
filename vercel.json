@@ -1,19 +1,20 @@
 {
+
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "static/style.css"
+      "dest": "static/$1"
     },
     {
       "src": "/",
       "dest": "templates/index.html"
     },
     {
-      "src": "/",
+      "src": "/button_action",
       "dest": "chatbot.py"
     },
     {
-      "src": "/",
+      "src": "/chat",
       "dest": "chatbot.py"
     },
     {
