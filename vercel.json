@@ -14,11 +14,20 @@
     },
     {
       "src": "/",
-      "dest": "index.html"
+      "dest": "templates/index.html"
+    },
+    {
+      "src": "/button_action",
+      "dest": "chatbot.py"
+    },
+    {
+      "src": "/chat",
+      "dest": "chatbot.py"
     },
     {
       "src": "/(.*)",
-      "dest": "chatbot.py"
+      "dest": "templates/index.html"
     }
   ]
+}
 }
