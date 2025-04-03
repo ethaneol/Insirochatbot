@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "api/chatbot.py"
+      "dest": "chatbot.py"
     }
   ]
 }
