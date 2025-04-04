@@ -46,7 +46,7 @@ chatbot = Chat(pairs, reflections)
 button_options = {
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
-    'about us': ['Profile Picture', 'Data Usage'],
+    'about us': ['Awards and Recognitions', 'Data Usage'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
@@ -54,14 +54,14 @@ button_options = {
 }
 
 option_responses = {
-    'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n '
+    'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n'
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
 
     'hours': 'We are open from 9 AM to 6 PM',
 
-    'profile picture': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
+    'awards and recognitions': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
                        '<p>I’m Xavier! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
 
     'data usage': 'Use our StarHub app to view data usage <br><br>'
