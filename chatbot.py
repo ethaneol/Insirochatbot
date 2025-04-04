@@ -25,7 +25,7 @@ pairs = [
     ],
     [
         r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
-        ["Our office is located at <a href='https://maps.app.goo.gl/ce1hsqtkCuzyuJak6' target='_blank' style='color: white'>49 Tannery Lane</a>."]
+        ["Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>. <br><br>"]
     ],
     [
         r".*phon(e|es|ed).*|.*numbe(r|rs).*|.*hotline.*|.*contac(t|ted|).*",
@@ -77,15 +77,21 @@ main_responses = {
 
 option_responses = {
     'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n'
-                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a> \n'
-                  '<iframe></>',
+                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a> \n',
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
 
     'hours': 'We are open from 9 AM to 6 PM',
 
     'awards and recognitions': '<img src="/static/masterpartner.jpg" alt="Xavier" style="max-width: 80%; border-radius: 5px"> \n <br>'
-                       '<p>I’m INSIRO! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
+                               '<p>'
+                                   '• StarHub Top Performing Reseller for Year 2002 to Year 2009 <br><br>'
+                                   '• StarHub Top Channel Partner for Year 2010 to Year 2012 <br><br>'
+                                   '• StarHub Top Performing Platinum Partner for Year 2013 to Year 2017 <br><br>'
+                                   '• StarHub Top Deal (Core Partner) for Year 2019 <br><br>'
+                                   '• Starhub Top Deal (Core Partner) for Q4 of Year 2020 <br><br>'
+                                   '• Starhub Top Deal (Core Partner) for Q1 to Q3 of Year 2021'
+                               '</p>',
 
     'data usage': 'Use our StarHub app to view data usage <br><br>'
                   '<a href="https://play.google.com/store/apps/details?id=com.starhub.csselfhelp" alt="Google Play" target="_blank"><img src="/static/gplay.jpg" class="data-usage-image"></a> <br>'
@@ -104,6 +110,7 @@ option_responses = {
     'future promos': 'We will announce future promos soon',
 
     'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
+
     'still require more help?': 'Contact us at <br>'
                                 ' <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
 
