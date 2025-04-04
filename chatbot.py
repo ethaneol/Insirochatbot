@@ -43,6 +43,7 @@ pairs = [
 
 
 chatbot = Chat(pairs, reflections)
+
 button_options = {
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
@@ -53,9 +54,19 @@ button_options = {
     'join us': ['Job Scope', 'Interested?']
 }
 
+main_responses = {
+    'about us': "INSIRO is a leading provider of broadband solutions...",
+    'general enquiries': "How can we assist you today?",
+    'services': "Here are the services we offer:",
+    'promotions': "Check out our latest promotions below!",
+    'frequently asked questions': "Here are some common questions we receive.",
+    'join us': "Looking for a career with us? See the details below."
+}
+
 option_responses = {
     'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n'
-                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
+                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a> \n'
+                  '<iframe></>',
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
 
@@ -100,19 +111,22 @@ def button_action():
     data = request.get_json()
     button_value = data['button_value'].lower()
 
+    # If it's a sub-option, return the direct response
     if button_value in option_responses:
         return jsonify({
             'response': option_responses[button_value],
             'new_options': []
         })
 
+    # If it's a main category, return the description + its sub-options
     if button_value in button_options:
+        response_message = main_responses.get(button_value, "Here are the available options:")
         return jsonify({
-            'response': f'You selected {data["button_value"]}.',
+            'response': response_message,
             'new_options': button_options.get(button_value, [])
         })
-    else:
-        return jsonify({'response': 'Unknown button action.', 'new_options': []})
+
+    return jsonify({'response': 'Unknown button action.', 'new_options': []})
 
 
 @app.route('/chat', methods=['POST'])
@@ -121,23 +135,23 @@ def chat():
         data = request.get_json()
         user_message = data['message'].lower()
 
-        response = chatbot.respond(data['message'])
-        if not response:
-            response = random.choice(["Why did you redeem it!?"])
-
+        # If the message matches a sub-option, return the response
         if user_message in option_responses:
             return jsonify({
                 'response': option_responses[user_message],
                 'new_options': []
             })
 
+        # If the message matches a main category, return the description and sub-options
         if user_message in button_options:
+            response_message = main_responses.get(user_message, user_message)
             return jsonify({
-                'response': f'{data["message"]}',
+                'response': response_message,
                 'new_options': button_options.get(user_message, [])
             })
 
-        return jsonify({'response': response})
+        # Default response if the input is unknown
+        return jsonify({'response': random.choice(["I'm not sure how to respond to that."])})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
