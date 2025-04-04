@@ -154,7 +154,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["Why did you redeem it!?"])
+            response = random.choice(["Sorry I didn't quite get that"])
 
 
         if user_message in option_responses:
