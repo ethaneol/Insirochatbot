@@ -103,11 +103,11 @@ option_responses = {
 
     'how to claim': 'Enter the code at checkout',
 
-    'current promos': 'We have a 20% discount this week',
+    'current promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
 
-    'past promos': 'Past promos are listed on our site',
+    'past promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
 
-    'future promos': 'We will announce future promos soon',
+    'future promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
 
     'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
 
