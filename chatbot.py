@@ -45,6 +45,9 @@ pairs = [
 chatbot = Chat(pairs, reflections)
 
 button_options = {
+    'menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
+    'main': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
+    'home': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
     'about us': ['Awards and Recognitions', 'Data Usage'],
@@ -55,7 +58,16 @@ button_options = {
 }
 
 main_responses = {
-    'about us': "INSIRO is a leading provider of broadband solutions...",
+    'main menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+                 "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+    'menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+    'main': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+    'home': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+    'about us': "Incorporated in Singapore in the year 2000, INSIRO Pte Ltd has successfully developed many IT strategies for our clients by understanding the latest consumer"
+                " trends and customizing our solutions to meet the specific needs of every customer.",
     'general enquiries': "How can we assist you today?",
     'services': "Here are the services we offer:",
     'promotions': "Check out our latest promotions below!",
@@ -72,8 +84,8 @@ option_responses = {
 
     'hours': 'We are open from 9 AM to 6 PM',
 
-    'awards and recognitions': '<img src="/static/xavier.jpeg" alt="Xavier"> \n <br>'
-                       '<p>I’m Xavier! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
+    'awards and recognitions': '<img src="/static/masterpartner.jpg" alt="Xavier" style="max-width: 80%; border-radius: 5px"> \n <br>'
+                       '<p>I’m INSIRO! But you can call me INSIROBOT. Do you have a name you prefer to go by? 😊</p>',
 
     'data usage': 'Use our StarHub app to view data usage <br><br>'
                   '<a href="https://play.google.com/store/apps/details?id=com.starhub.csselfhelp" alt="Google Play" target="_blank"><img src="/static/gplay.jpg" class="data-usage-image"></a> <br>'
@@ -111,22 +123,20 @@ def button_action():
     data = request.get_json()
     button_value = data['button_value'].lower()
 
-    # If it's a sub-option, return the direct response
     if button_value in option_responses:
         return jsonify({
             'response': option_responses[button_value],
             'new_options': []
         })
 
-    # If it's a main category, return the description + its sub-options
     if button_value in button_options:
         response_message = main_responses.get(button_value, "Here are the available options:")
         return jsonify({
             'response': response_message,
             'new_options': button_options.get(button_value, [])
         })
-
-    return jsonify({'response': 'Unknown button action.', 'new_options': []})
+    else:
+        return jsonify({'response': 'Unknown button action.', 'new_options': []})
 
 
 @app.route('/chat', methods=['POST'])
@@ -135,14 +145,17 @@ def chat():
         data = request.get_json()
         user_message = data['message'].lower()
 
-        # If the message matches a sub-option, return the response
+        response = chatbot.respond(data['message'])
+        if not response:
+            response = random.choice(["Why did you redeem it!?"])
+
+
         if user_message in option_responses:
             return jsonify({
                 'response': option_responses[user_message],
                 'new_options': []
             })
 
-        # If the message matches a main category, return the description and sub-options
         if user_message in button_options:
             response_message = main_responses.get(user_message, user_message)
             return jsonify({
@@ -150,8 +163,7 @@ def chat():
                 'new_options': button_options.get(user_message, [])
             })
 
-        # Default response if the input is unknown
-        return jsonify({'response': random.choice(["I'm not sure how to respond to that."])})
+        return jsonify({'response': response})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500

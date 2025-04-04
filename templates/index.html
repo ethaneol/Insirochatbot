@@ -16,11 +16,11 @@
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
-                <img src="{{url_for('static', filename='xavier.jpeg')}}" class="bot-avatar" />
+                <img src="{{url_for('static', filename='insiro.jpg')}}" class="bot-avatar" />
                 <div class="message-content">
                     <p>
-                        Hi. I am Xavier! Your personal assistant for all things INSIRO. <br>
-                        Please select from the options below.
+                        <span style="font-size: 35px; font-weight: bold;">Welcome to Insiro!</span> <br><br>
+                        Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?
                     </p>
                     <div class="quick-replies">
                         <button class="quick-reply">Main menu</button>
@@ -58,7 +58,7 @@
             messageContent.classList.add('message-content');
 
             if (sender === 'bot') {
-                messageDiv.innerHTML = `<img src="{{url_for('static', filename='xavier.jpeg')}}" class="bot-avatar" />`;
+                messageDiv.innerHTML = `<img src="{{url_for('static', filename='insiro.jpg')}}" class="bot-avatar" />`;
             }
             messageDiv.appendChild(messageContent);
             chatMessages.appendChild(messageDiv);
