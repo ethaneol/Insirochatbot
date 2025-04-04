@@ -59,13 +59,13 @@ button_options = {
 
 main_responses = {
     'main menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
-                 "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+                 "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
     'menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
-            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+            "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
     'main': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
-            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+            "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
     'home': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
-            "Hello! I'm the Insiro AI Content Assistant, here to streamline your content creation. What can I help you with today?",
+            "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
     'about us': "Incorporated in Singapore in the year 2000, INSIRO Pte Ltd has successfully developed many IT strategies for our clients by understanding the latest consumer"
                 " trends and customizing our solutions to meet the specific needs of every customer.",
     'general enquiries': "How can we assist you today?",
