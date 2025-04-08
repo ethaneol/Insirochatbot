@@ -10,11 +10,11 @@ CORS(app)
 pairs = [
     [
         r"hi|hello|hey",
-        ["Hello!", "Hi bbg!", "Hey!"]
+        ["Hello!", "Hi!", "Hey!"]
     ],
     [
         r"what is your name?|name?",
-        ["I'm a chatbot.", "You can call me Xavier."]
+        ["I'm a chatbot.", "You can call me InsiroBot."]
     ],
     [
         r"bye|goodbye|see you",
@@ -157,7 +157,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["Sorry I didn't quite get that"])
+            response = random.choice(["Sorry I didn't quite get that","Could you rephrase that?"])
 
 
         if user_message in option_responses:
