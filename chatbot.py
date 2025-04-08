@@ -95,7 +95,7 @@ option_responses = {
 
     'others': 'View our social media profiles below!<br> <br>'
                 '<a href="https://www.instagram.com/insiropteltd/"><img src="/static/social.png" class="socmed-icon"></a>'
-                '<a href="https://wa.me/6591127415"><img src="/static/whatsapp.png" class="socmed-icon"></a>',
+                '<a href="https://wa.me/6591870706"><img src="/static/whatsapp.png" class="socmed-icon"></a>',
 
     'promo info': 'This promo is for new StarHub broadband users',
 
