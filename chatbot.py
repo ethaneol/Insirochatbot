@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
-import os
+
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
@@ -10,11 +10,11 @@ CORS(app)
 pairs = [
     [
         r"hi|hello|hey",
-        ["Hello!", "Hi !", "Hey!"]
+        ["Hello!", "Hi bbg!", "Hey!"]
     ],
     [
         r"what is your name?|name?",
-        ["I'm a chatbot.", "You can call me Insirobot."]
+        ["I'm a chatbot.", "You can call me Xavier."]
     ],
     [
         r"bye|goodbye|see you",
@@ -127,14 +127,7 @@ option_responses = {
 
 @app.route('/')
 def index():
-    return send_from_directory('index.html', option_responses=option_responses, static_folder='static')
-
-@app.route('/<path:path>')
-def serve_static(path):
-    if os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return "file not fougnd"
+    return render_template('index.html', option_responses=option_responses)
 
 @app.route('/button_action', methods=['POST'])
 def button_action():
