@@ -93,9 +93,9 @@ option_responses = {
                                    '• Starhub Top Deal (Core Partner) for Q1 to Q3 of Year 2021'
                                '</p>',
 
-    'others': 'Use our StarHub app to view data usage <br><br>'
-                  '<a href="https://play.google.com/store/apps/details?id=com.starhub.csselfhelp" alt="Google Play" target="_blank"><img src="/static/gplay.jpg" class="data-usage-image"></a> <br>'
-                  '<a href="https://apps.apple.com/sg/app/starhub-app/id470460379" alt="Apple Store" target="_blank"><img src="/static/apple.jpg" class="data-usage-image"></a>',
+    'others': 'View our social media profiles below!<br> <br>'
+                '<a href="https://www.instagram.com/insiropteltd/"><img src="/static/social.png" class="socmed-icon"></a>'
+                '<a href="https://wa.me/6591127415"><img src="/static/whatsapp.png" class="socmed-icon"></a>',
 
     'promo info': 'This promo is for new StarHub broadband users',
 
