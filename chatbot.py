@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
+import bleach
 
 app = Flask(__name__)
 CORS(app)
@@ -131,51 +132,52 @@ def index():
 @app.route('/button_action', methods=['POST'])
 def button_action():
     data = request.get_json()
-    button_value = data['button_value'].lower()
+    button_value = bleach.clean(data['button_value'].lower())  # Sanitize input
 
     if button_value in option_responses:
         return jsonify({
-            'response': option_responses[button_value],
+            'response': bleach.clean(option_responses[button_value], tags=bleach.sanitizer.ALLOWED_TAGS + ['a', 'br', 'img', 'p', 'span'], attributes={'a': ['href', 'target', 'style'], 'img': ['src', 'alt', 'class'], 'span': ['style']}),
             'new_options': []
         })
 
     if button_value in button_options:
         response_message = main_responses.get(button_value, "Here are the available options:")
         return jsonify({
-            'response': response_message,
+            'response': bleach.clean(response_message, tags=bleach.sanitizer.ALLOWED_TAGS + ['a', 'br', 'img', 'p', 'span'], attributes={'a': ['href', 'target', 'style'], 'img': ['src', 'alt', 'class'], 'span': ['style']}),
             'new_options': button_options.get(button_value, [])
         })
     else:
         return jsonify({'response': 'Unknown button action.', 'new_options': []})
 
+
 @app.route('/chat', methods=['POST'])
 def chat():
     try:
         data = request.get_json()
-        user_message = data['message'].lower()
+        user_message = bleach.clean(data['message'].lower())  # Sanitize input
 
-        response = chatbot.respond(data['message'])
+        response = chatbot.respond(user_message)
         if not response:
             response = random.choice(["Sorry I didn't quite get that"])
 
-
         if user_message in option_responses:
             return jsonify({
-                'response': option_responses[user_message],
+                'response': bleach.clean(option_responses[user_message], tags=bleach.sanitizer.ALLOWED_TAGS + ['a', 'br', 'img', 'p', 'span'], attributes={'a': ['href', 'target', 'style'], 'img': ['src', 'alt', 'class'], 'span': ['style']}),
                 'new_options': []
             })
 
         if user_message in button_options:
             response_message = main_responses.get(user_message, user_message)
             return jsonify({
-                'response': response_message,
+                'response': bleach.clean(response_message, tags=bleach.sanitizer.ALLOWED_TAGS + ['a', 'br', 'img', 'p', 'span'], attributes={'a': ['href', 'target', 'style'], 'img': ['src', 'alt', 'class'], 'span': ['style']}),
                 'new_options': button_options.get(user_message, [])
             })
 
-        return jsonify({'response': response})
+        return jsonify({'response': bleach.clean(response)})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 
 
 if __name__ == '__main__':
