@@ -50,7 +50,7 @@ button_options = {
     'home': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
-    'about us': ['Awards and Recognitions', 'Data Usage'],
+    'about us': ['Awards and Recognitions', 'Others'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
@@ -76,7 +76,7 @@ main_responses = {
 }
 
 option_responses = {
-    'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> \n'
+    'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> <br> \n'
                   'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a> \n',
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
@@ -93,7 +93,7 @@ option_responses = {
                                    '• Starhub Top Deal (Core Partner) for Q1 to Q3 of Year 2021'
                                '</p>',
 
-    'data usage': 'Use our StarHub app to view data usage <br><br>'
+    'others': 'Use our StarHub app to view data usage <br><br>'
                   '<a href="https://play.google.com/store/apps/details?id=com.starhub.csselfhelp" alt="Google Play" target="_blank"><img src="/static/gplay.jpg" class="data-usage-image"></a> <br>'
                   '<a href="https://apps.apple.com/sg/app/starhub-app/id470460379" alt="Apple Store" target="_blank"><img src="/static/apple.jpg" class="data-usage-image"></a>',
 
@@ -124,7 +124,6 @@ option_responses = {
 def index():
     return render_template('index.html', option_responses=option_responses)
 
-
 @app.route('/button_action', methods=['POST'])
 def button_action():
     data = request.get_json()
@@ -144,7 +143,6 @@ def button_action():
         })
     else:
         return jsonify({'response': 'Unknown button action.', 'new_options': []})
-
 
 @app.route('/chat', methods=['POST'])
 def chat():
