@@ -94,8 +94,12 @@ option_responses = {
                                '</p>',
 
     'others': 'View our social media profiles below!<br> <br>'
-                '<a href="https://www.instagram.com/insiropteltd/"><img src="/static/social.png" class="socmed-icon"></a>'
-                '<a href="https://wa.me/6597109706?text=I%20am%20interested%20in%20your%20broadband%20promos" target="_blank"><img src="/static/whatsapp.png" class="socmed-icon"></a>',
+                '<a href="https://www.instagram.com/insiropteltd/" target="_blank"><img src="/static/instagram.png" class="socmed-icon"></a>'
+                '<a href="https://wa.me/65?text=I%20am%20interested%20in%20your%20broadband%20promos" target="_blank"><img src="/static/whatsapp.png" class="socmed-icon"></a>'
+                '<a href="https://t.me/StarHubBTO" target="_blank"><img src="/static/telegram.png" class="socmed-icon"></a>'
+                '<a href="https://insiro.com" target="_blank"><img src="/static/internet.png" class="socmed-icon"></a>'
+                '<a href="https://linktr.ee/insiro" target="_blank"><img src="/static/link.png" class="socmed-icon"></a>',
+
 
     'promo info': 'This promo is for new StarHub broadband users',
 
