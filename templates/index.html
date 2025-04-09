@@ -19,7 +19,7 @@
         </div>
         <div class="chat-messages" id="chat-messages">
             <div class="message bot-message">
-                <img src="{{url_for('static', filename='insiro.jpg')}}" class="bot-avatar" />
+                <img src="{{url_for('static', filename='insiro.png')}}" class="bot-avatar" />
                 <div class="message-content">
                     <p>
                         <span style="font-size: 35px; font-weight: bold;">Welcome to Insiro!</span> <br><br>
@@ -62,7 +62,7 @@
             messageContent.classList.add('message-content');
 
             if (sender === 'bot') {
-                messageDiv.innerHTML = `<img src="{{url_for('static', filename='insiro.jpg')}}" class="bot-avatar" />`;
+                messageDiv.innerHTML = `<img src="{{url_for('static', filename='insiro.png')}}" class="bot-avatar" />`;
             }
             messageDiv.appendChild(messageContent);
             chatMessages.appendChild(messageDiv);
