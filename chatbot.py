@@ -1,12 +1,16 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template, send_from_directory, session
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
 import bleach
+from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
 CORS(app)
+csrf = CSRFProtect(app)
+
+app.config['SECRET_KEY'] = 'my7nX9evuRn9mgjatSreb1Ts4htlT1O1is1nz0U+gFU='
 
 pairs = [
     [
@@ -60,13 +64,13 @@ button_options = {
 }
 
 main_responses = {
-    'main menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+    'main menu': "<span style='font-size: 35px; font-weight: bold;' class='main-message'>Welcome to Insiro!</span> <br><br>"
                  "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
-    'menu': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+    'menu': "<span style='font-size: 35px; font-weight: bold;' class='main-message'>Welcome to Insiro!</span> <br><br>"
             "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
-    'main': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+    'main': "<span style='font-size: 35px; font-weight: bold;' class='main-message'>Welcome to Insiro!</span> <br><br>"
             "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
-    'home': "<span style='font-size: 35px; font-weight: bold;'>Welcome to Insiro!</span> <br><br>"
+    'home': "<span style='font-size: 35px; font-weight: bold;' class='main-message'>Welcome to Insiro!</span> <br><br>"
             "Hello! I'm the Insiro AI Assistant. What can I help you with today?",
     'about us': "Incorporated in Singapore in the year 2000, INSIRO Pte Ltd has successfully developed many IT strategies for our clients by understanding the latest consumer"
                 " trends and customizing our solutions to meet the specific needs of every customer.",
@@ -128,16 +132,23 @@ option_responses = {
 
 @app.route('/')
 def index():
+    csrf_token = generate_csrf()
     return render_template('index.html', option_responses=option_responses)
 
 @app.route('/button_action', methods=['POST'])
 def button_action():
+    csrf.protect()
     data = request.get_json()
     button_value = data['button_value'].lower()
 
     # Sanitize button_value (though it's likely already safe, being a button value)
-    allowed_tags = []  # No tags allowed
-    allowed_attributes = {}  # No attributes allowed.
+    allowed_tags = ['span', 'a', 'br', 'img', 'p']
+    allowed_attributes = {
+        'span': ['style', 'class'],
+        'a': ['href', 'target', 'style'],
+        'img': ['src', 'alt', 'style', 'class'],
+        'p': ['style', 'class']
+    }
     safe_button_value = bleach.clean(button_value, tags=allowed_tags, attributes=allowed_attributes)
 
     if safe_button_value in option_responses:
@@ -164,13 +175,22 @@ def button_action():
 
 @app.route('/chat', methods=['POST'])
 def chat():
+    csrf.protect()
     try:
         data = request.get_json()
+        if not data or 'message' not in data:
+            return jsonify({'error': 'Invalid JSON or missing "message" field'}), 400
+
         user_message = data['message'].lower()
 
         # Sanitize user_message
-        allowed_tags = []
-        allowed_attributes = {}
+        allowed_tags = ['span', 'a', 'br', 'img', 'p']
+        allowed_attributes = {
+            'span': ['style', 'class'],
+            'a': ['href', 'target', 'style'],
+            'img': ['src', 'alt', 'style', 'class'],
+            'p': ['style', 'class']
+        }
         safe_user_message = bleach.clean(user_message, tags=allowed_tags, attributes=allowed_attributes)
 
         response = chatbot.respond(data['message'])  # chatbot.respond() is where the unsanitized user message is used.
@@ -179,20 +199,15 @@ def chat():
         safe_response = bleach.clean(response)  # sanitize the response from the chatbot.
 
         if safe_user_message in option_responses:
-            safe_option_response = bleach.clean(option_responses[safe_user_message])
             return jsonify({
-                'response': safe_option_response,
+                'response': option_responses[safe_user_message],
                 'new_options': []
             })
 
         if safe_user_message in button_options:
-            response_message = main_responses.get(safe_user_message, safe_user_message)
-            safe_response_message = bleach.clean(response_message)
-            new_options = button_options.get(safe_user_message, [])
-            safe_new_options = [bleach.clean(option) for option in new_options]
             return jsonify({
-                'response': safe_response_message,
-                'new_options': safe_new_options
+                'response': main_responses.get(safe_user_message, safe_user_message),
+                'new_options': button_options.get(safe_user_message, [])
             })
 
         return jsonify({'response': safe_response})

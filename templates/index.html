@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot Interface</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        const csrfToken = "{{ csrf_token() }}"; // Pass the token to JavaScript
+    </script>
 </head>
 
 <body>
@@ -143,6 +146,7 @@ function displayNewOptions(options) {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken,
                     },
                     body: JSON.stringify({ message: message }),
                 })
@@ -159,6 +163,7 @@ function displayNewOptions(options) {
                     });
             }
         });
+
     </script>
 </body>
 
