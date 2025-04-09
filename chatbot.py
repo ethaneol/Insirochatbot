@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
+import bleach
 
 
 app = Flask(__name__, static_folder='static')
@@ -134,20 +135,32 @@ def button_action():
     data = request.get_json()
     button_value = data['button_value'].lower()
 
-    if button_value in option_responses:
+    # Sanitize button_value (though it's likely already safe, being a button value)
+    allowed_tags = []  # No tags allowed
+    allowed_attributes = {}  # No attributes allowed.
+    safe_button_value = bleach.clean(button_value, tags=allowed_tags, attributes=allowed_attributes)
+
+    if safe_button_value in option_responses:
+        response = option_responses[safe_button_value]
+        safe_response = bleach.clean(response)  # sanitize response
         return jsonify({
-            'response': option_responses[button_value],
+            'response': safe_response,
             'new_options': []
         })
 
-    if button_value in button_options:
-        response_message = main_responses.get(button_value, "Here are the available options:")
+    if safe_button_value in button_options:
+        response_message = main_responses.get(safe_button_value, "Here are the available options:")
+        safe_response_message = bleach.clean(response_message)  # sanitize response
+        new_options = button_options.get(safe_button_value, [])
+        safe_new_options = [bleach.clean(option) for option in new_options]  # sanitize each new option
         return jsonify({
-            'response': response_message,
-            'new_options': button_options.get(button_value, [])
+            'response': safe_response_message,
+            'new_options': safe_new_options
         })
     else:
-        return jsonify({'response': 'Unknown button action.', 'new_options': []})
+        safe_unknown_response = bleach.clean('Unknown button action.')  # sanitize unknown response.
+        return jsonify({'response': safe_unknown_response, 'new_options': []})
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -155,28 +168,38 @@ def chat():
         data = request.get_json()
         user_message = data['message'].lower()
 
-        response = chatbot.respond(data['message'])
+        # Sanitize user_message
+        allowed_tags = []
+        allowed_attributes = {}
+        safe_user_message = bleach.clean(user_message, tags=allowed_tags, attributes=allowed_attributes)
+
+        response = chatbot.respond(data['message'])  # chatbot.respond() is where the unsanitized user message is used.
         if not response:
-            response = random.choice(["Sorry I didn't quite get that","Could you rephrase that?"])
+            response = random.choice(["Sorry I didn't quite get that", "Could you rephrase that?"])
+        safe_response = bleach.clean(response)  # sanitize the response from the chatbot.
 
-
-        if user_message in option_responses:
+        if safe_user_message in option_responses:
+            safe_option_response = bleach.clean(option_responses[safe_user_message])
             return jsonify({
-                'response': option_responses[user_message],
+                'response': safe_option_response,
                 'new_options': []
             })
 
-        if user_message in button_options:
-            response_message = main_responses.get(user_message, user_message)
+        if safe_user_message in button_options:
+            response_message = main_responses.get(safe_user_message, safe_user_message)
+            safe_response_message = bleach.clean(response_message)
+            new_options = button_options.get(safe_user_message, [])
+            safe_new_options = [bleach.clean(option) for option in new_options]
             return jsonify({
-                'response': response_message,
-                'new_options': button_options.get(user_message, [])
+                'response': safe_response_message,
+                'new_options': safe_new_options
             })
 
-        return jsonify({'response': response})
+        return jsonify({'response': safe_response})
 
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        safe_error = bleach.clean(str(e))  # sanitize error message.
+        return jsonify({'error': safe_error}), 500
 
 
 if __name__ == '__main__':
