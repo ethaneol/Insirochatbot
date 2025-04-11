@@ -27,7 +27,7 @@ pairs = [
     ],
     [
         r".*than(k|ks).*",
-        ["No need to thank me", "I'm trying to be more humble"]
+        ["No need to thank me", "I'm trying to be more humble", "No worries!", "Welcome!"]
     ],
     [
         r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
