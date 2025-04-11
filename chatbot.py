@@ -26,16 +26,16 @@ pairs = [
         ["Goodbye!", "See you later", "Bye!"]
     ],
     [
-        r"thank you",
+        r".*than(k|ks).*",
         ["No need to thank me", "I'm trying to be more humble"]
     ],
     [
         r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
-        ["Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>. <br><br>"]
+        ["Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>"]
     ],
     [
         r".*phon(e|es|ed).*|.*numbe(r|rs).*|.*hotline.*|.*contac(t|ted|).*",
-        ["Our office hotline is <a href='tel:+65 6323 1773' target='_blank' style='color:white'>+65-6323-1773</a>"]
+        ["Our office hotline is <a href='tel:65 6323 1773' target='_blank'>63231773</a> \n"]
     ],
     [
         r".*broadband.*|.*wifi.*|.*internet.*|.*network.*|.*lan.*|.*wireless.*|.*network.*",
@@ -109,22 +109,22 @@ option_responses = {
 
     'promo info': 'This promo is for new StarHub broadband users',
 
-    'eligibility': 'You must be 18+ to claim this',
+    'eligibility': 'You must be out of contract!',
 
-    'how to claim': 'Enter the code at checkout',
+    'how to claim': 'Type contact to claim!',
 
-    'current promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Here!</a>',
+    'current promos': 'View our current promos <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Here!</a>',
 
-    'past promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
+    'past promos': 'View our past promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
 
-    'future promos': 'View our promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
+    'future promos': 'View our future promos <a href="https://www.starhub.com/personal/broadband.html" target="_blank">Here!</a>',
 
     'starhub faq': 'Our <a href="https://www.starhub.com/personal/support.html" target="_blank">FAQ</a>',
 
     'still require more help?': 'Contact us at <br>'
                                 ' <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a>',
 
-    'job scope': '<null>',
+    'job scope': 'Any cheerful and self motivated individual will do!',
 
     'interested?': 'Drop your CV at <br>'
                    '<a href="mailto:normila@insiro.com" target="_blank">normila@insiro.com</a>',
