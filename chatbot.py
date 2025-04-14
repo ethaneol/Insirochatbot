@@ -1,16 +1,51 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory, session
+from flask import Flask, request, jsonify, render_template, send_from_directory, session, request
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
 import bleach
 from flask_wtf.csrf import CSRFProtect, generate_csrf
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+from werkzeug.middleware.proxy_fix import ProxyFix
+import logging
+from datetime import datetime
 
 
 app = Flask(__name__)
 CORS(app)
 csrf = CSRFProtect(app) #black balls programs
 
+limiter = Limiter(key_func=get_remote_address)
+limiter.init_app(app)
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+
+logging.basicConfig(
+    filename = 'logging.txt',
+    level = logging.INFO,
+    format = '%(asctime)s - %(levelname)s - %(message)s',
+    datefmt = '%Y-%m-%d %H:%M:%S'
+)
+
+error_log = logging.getLogger('error_logger')
+error_log.setLevel(logging.ERROR)
+error_handler = logging.FileHandler('error_logging.txt')
+error_handler.setLevel(logging.ERROR)
+error_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
+error_handler.setFormatter(error_formatter)
+error_log.addHandler(error_handler)
+
+def return_real_ip():
+    return request.headers.get('X-Forwarded-For', request.remote_addr).split(',')[0].strip()
+
 app.config['SECRET_KEY'] = 'my7nX9evuRn9mgjatSreb1Ts4htlT1O1is1nz0U+gFU='
+app.config.update(
+    SESSION_COOKIE_HTTPONLY = True,
+    SESSION_COOKIE_SECURE = True,
+    SESSION_COOKIE_SAMESITE = 'Lax'
+)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 pairs = [
     [
@@ -134,6 +169,25 @@ option_responses = {
                    '<a href="mailto:normila@insiro.com" target="_blank">normila@insiro.com</a>',
 }
 
+@app.after_request
+def apply_csp(response):
+    response.headers['Content-Security-Policy'] = (
+        "default-src: 'self';"
+        "script-src: 'self';"
+        "style-src 'self' https://fonts.googleapis.com 'unsafe-inline';"
+        "img-src: 'self' data:;"
+        "font-src 'self' https://fonts.gstatic.com;;"
+        "connect-src: 'self';"
+        "frame-src: 'none'"
+        "object-src: 'none'"
+    )
+    return response
+
+def secure_headers(response):
+    response.headers['X-Frame Options'] = 'DENY'
+    response.headers['X-Content Options'] = 'nosniff'
+    return response
+
 @app.route('/')
 def index():
     csrf_token = generate_csrf()
@@ -144,6 +198,8 @@ def button_action():
     csrf.protect()
     data = request.get_json()
     button_value = data['button_value'].lower()
+
+    logging.info(f"[Button Click] - User Selected: {button_value}")
 
     # Sanitize button_value (though it's likely already safe, being a button value)
     allowed_tags = ['span', 'a', 'br', 'img', 'p']
@@ -178,6 +234,7 @@ def button_action():
 
 
 @app.route('/chat', methods=['POST'])
+@limiter.limit("5 per second")
 def chat():
     csrf.protect()
     try:
@@ -186,6 +243,7 @@ def chat():
             return jsonify({'error': 'Invalid JSON or missing "message" field'}), 400
 
         user_message = data['message'].lower()
+        logging.info(f"[Chat Input] - User typed: {user_message}")
 
         # Sanitize user_message
         allowed_tags = ['span', 'a', 'br', 'img', 'p']
@@ -201,6 +259,7 @@ def chat():
         if not response:
             response = random.choice(["Sorry I didn't quite get that", "Could you rephrase that?"])
         safe_response = bleach.clean(response)
+        logging.info(f"[Chatbot Response] - Replied: {response}")
 
         if safe_user_message in option_responses:
             return jsonify({
