@@ -14,6 +14,10 @@ app.config['SECRET_KEY'] = 'my7nX9evuRn9mgjatSreb1Ts4htlT1O1is1nz0U+gFU='
 
 pairs = [
     [
+        r".*issu(e|es).*|.*proble(m|ms).*|.*troubleshoo(t|ting|ts).*|.*troubl(e|es).*",
+        ["Please contact us at <a href='tel:6563231773'>+65-6323-1773</a> for problems encountered."]
+    ],
+    [
         r"hi|hello|hey",
         ["Hello!", "Hi!", "Hey!"]
     ],
@@ -193,10 +197,10 @@ def chat():
         }
         safe_user_message = bleach.clean(user_message, tags=allowed_tags, attributes=allowed_attributes)
 
-        response = chatbot.respond(data['message'])  # chatbot.respond() is where the unsanitized user message is used.
+        response = chatbot.respond(data['message'])
         if not response:
             response = random.choice(["Sorry I didn't quite get that", "Could you rephrase that?"])
-        safe_response = bleach.clean(response)  # sanitize the response from the chatbot.
+        safe_response = bleach.clean(response)
 
         if safe_user_message in option_responses:
             return jsonify({
