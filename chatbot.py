@@ -38,7 +38,7 @@ pairs = [
         ["Our office hotline is <a href='tel:65 6323 1773' target='_blank'>63231773</a> \n"]
     ],
     [
-        r".*broadband.*|.*wifi.*|.*internet.*|.*network.*|.*lan.*|.*wireless.*|.*network.*",
+        r".*broadband.*|.*wifi.*|.*internet.*|.*network.*|.*lan.*|.*wireless.*",
         ["View Starhub's broadband plans <a href='https://www.starhub.com/personal/broadband.html#plans' target='_blank' style='color: white'>here</a>."]
     ],
     [
