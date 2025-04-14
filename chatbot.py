@@ -27,10 +27,10 @@ pairs = [
     ],
     [
         r".*than(k|ks).*",
-        ["No need to thank me", "I'm trying to be more humble", "No worries!", "Welcome!aw"]
+        ["No need to thank me", "I'm trying to be more humble", "No worries!", "Welcome!"]
     ],
     [
-        r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
+        r".*address.*|.*office.*|.*locat(e|ed|ion).*|.*company.*",
         ["Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>"]
     ],
     [
