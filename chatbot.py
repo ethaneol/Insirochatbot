@@ -8,7 +8,7 @@ from flask_wtf.csrf import CSRFProtect, generate_csrf
 
 app = Flask(__name__)
 CORS(app)
-csrf = CSRFProtect(app)
+csrf = CSRFProtect(app) #black balls program
 
 app.config['SECRET_KEY'] = 'my7nX9evuRn9mgjatSreb1Ts4htlT1O1is1nz0U+gFU='
 
