@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = 'my7nX9evuRn9mgjatSreb1Ts4htlT1O1is1nz0U+gFU='
 pairs = [
     [
         r".*issu(e|es).*|.*proble(m|ms).*|.*troubleshoo(t|ting|ts).*|.*troubl(e|es).*",
-        ["Please contact us at <a href='tel:6563231773'>+6323 1773</a> for any problems encountered."]
+        ["Please contact us at <a href='tel:6563231773'>6323 1773</a> for any problems encountered."]
     ],
     [
         r"hi|hello|hey",
