@@ -22,7 +22,7 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
 logging.basicConfig(
-    filename ='/tmp/logging.txt',
+    filename ='tmp/logging.txt',
     level = logging.INFO,
     format = '%(asctime)s - %(levelname)s - %(message)s',
     datefmt = '%Y-%m-%d %H:%M:%S'
@@ -30,7 +30,7 @@ logging.basicConfig(
 
 error_log = logging.getLogger('error_logger')
 error_log.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('/tmp/error_logging.txt')
+error_handler = logging.FileHandler('tmp/error_logging.txt')
 error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
 error_handler.setFormatter(error_formatter)
@@ -173,12 +173,12 @@ option_responses = {
 def apply_csp(response):
     response.headers['Content-Security-Policy'] = (
         "default-src: 'self';"
-        "script-src: 'self';"
+        "script-src: 'self' https://www.google.com https://www.gstatic.com 'unsafe-inline';"
         "style-src 'self' https://fonts.googleapis.com 'unsafe-inline';"
         "img-src: 'self' data:;"
         "font-src 'self' https://fonts.gstatic.com;;"
         "connect-src: 'self';"
-        "frame-src: 'none'"
+        "frame-src: https://www.google.com https://www.gstatic.com;"
         "object-src: 'none'"
     )
     return response
@@ -281,4 +281,4 @@ def chat():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

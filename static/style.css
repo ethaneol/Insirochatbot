@@ -88,7 +88,6 @@ body {
     justify-content: left; /* Center vertically */ /* Center horizontally *//* Ensure text is centered */
 }
 
-
 .bot-avatar {
     max-width: 70%;
     height: 60px;
@@ -148,16 +147,19 @@ body {
     padding: 15px;
     border-top: 1px solid #eee;
     background-color: #f8f8f8;
+    overflow: hidden;
 }
 
 #user-input {
-font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     flex-grow: 1;
     padding: 10px 15px;
     border: 1px solid #ddd;
     border-radius: 25px;
     font-size: 14px;
     margin-right: 10px;
+    box-sizing: border-box;
+    width: calc(100% - 120px); /* Adjust width to make room for the button */
 }
 
 #send-button {
@@ -169,6 +171,7 @@ font-family: 'Poppins', sans-serif;
     border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
+    float: left
 }
 
 #send-button:hover {

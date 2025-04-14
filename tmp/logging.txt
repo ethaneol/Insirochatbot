@@ -1,0 +1,12 @@
+2025-04-14 15:15:07 - INFO - [Chat Input] - User typed: general enquiries
+2025-04-14 15:15:07 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 15:15:10 - INFO - [Chat Input] - User typed: hi
+2025-04-14 15:15:10 - INFO - [Chatbot Response] - Replied: Hi!
+2025-04-14 15:26:00 - INFO - [Chat Input] - User typed: frequently asked questions
+2025-04-14 15:26:00 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 15:30:43 - INFO - [Chat Input] - User typed: home
+2025-04-14 15:30:43 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 15:30:46 - INFO - [Chat Input] - User typed: about us
+2025-04-14 15:30:46 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 15:30:49 - INFO - [Chat Input] - User typed: dss
+2025-04-14 15:30:49 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
