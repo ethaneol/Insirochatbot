@@ -18,7 +18,7 @@ pairs = [
         ["Hello!", "Hi!", "Hey!"]
     ],
     [
-        r"what is your name?|name?",
+        r".*name.*",
         ["I'm a chatbot.", "You can call me InsiroBot."]
     ],
     [
@@ -27,7 +27,7 @@ pairs = [
     ],
     [
         r".*than(k|ks).*",
-        ["No need to thank me", "I'm trying to be more humble", "No worries!", "Welcome!"]
+        ["No need to thank me", "I'm trying to be more humble", "No worries!", "Welcome!aw"]
     ],
     [
         r".*address.*|.*office.*|.*locat(e|ed).*|.*company.*",
