@@ -13,8 +13,6 @@ import os
 
 is_vercel = os.getenv('VERCEL') is not None
 
-log_file_path = '/tmp/logging.txt' if is_vercel else 'logging.txt'
-error_log_path = '/tmp/error_logging.txt' if is_vercel else 'error_logging.txt'
 
 app = Flask(__name__)
 CORS(app)
@@ -27,7 +25,7 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
 logging.basicConfig(
-    filename ='logging.txt',
+    filename ='/tmp/logging.txt',
     level = logging.INFO,
     format = '%(asctime)s - %(levelname)s - %(message)s',
     datefmt = '%Y-%m-%d %H:%M:%S'
@@ -35,7 +33,7 @@ logging.basicConfig(
 
 error_log = logging.getLogger('error_logger')
 error_log.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('error_logging.txt')
+error_handler = logging.FileHandler('/tmp/error_logging.txt')
 error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
 error_handler.setFormatter(error_formatter)
