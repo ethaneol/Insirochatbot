@@ -11,9 +11,6 @@ import logging
 from datetime import datetime
 import os
 
-is_vercel = os.getenv('VERCEL') is not None
-
-
 app = Flask(__name__)
 CORS(app)
 csrf = CSRFProtect(app) #black balls programs
@@ -102,7 +99,8 @@ button_options = {
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
-    'join us': ['Job Scope', 'Interested?']
+    'join us': ['Job Scope', 'Interested?'],
+    'we are hiring!': ['Part Time', 'Full Time', 'Interested?']
 }
 
 main_responses = {
@@ -120,7 +118,8 @@ main_responses = {
     'services': "Here are the services we offer:",
     'promotions': "Check out our latest promotions below!",
     'frequently asked questions': "Here are some common questions we receive.",
-    'join us': "Looking for a career with us? See the details below."
+    'join us': "Looking for a career with us? See the details below.",
+    'we are hiring!': "We are hiring talented individuals as of now!"
 }
 
 option_responses = {
@@ -170,6 +169,10 @@ option_responses = {
 
     'interested?': 'Drop your CV at <br>'
                    '<a href="mailto:normila@insiro.com" target="_blank">normila@insiro.com</a>',
+
+    'full time': 'null',
+
+    'part time': 'null',
 }
 
 @app.after_request

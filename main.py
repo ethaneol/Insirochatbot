@@ -3,7 +3,7 @@ import logging
 import datetime
 import os
 
-def log_pycharm_packages(log_file_path="requirements.txt"):
+def log_pycharm_packages(log_file_path="requirements1txt"):
     """
     Logs the installed packages in the PyCharm environment to a specified file, clearing previous entries.
 
@@ -47,4 +47,3 @@ def log_pycharm_packages(log_file_path="requirements.txt"):
 
 if __name__ == "__main__":
     log_pycharm_packages()
-    #log_pycharm_packages(log_file_path = os.path.join(os.path.expanduser("~"), "Desktop", "my_pycharm_packages.log"))
