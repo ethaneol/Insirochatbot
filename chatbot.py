@@ -257,7 +257,7 @@ def chat():
 
         response = chatbot.respond(data['message'])
         if not response:
-            response = random.choice(["Sorry I didn't quite get that", "Could you rephrase that?"])
+            response = random.choice(["Sorry, I didn't quite get that", "Could you rephrase that?"])
         safe_response = bleach.clean(response)
         logging.info(f"[Chatbot Response] - Replied: {response}")
 
