@@ -22,7 +22,7 @@ log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
 logging.basicConfig(
-    filename ='/tmp/logging.txt',
+    filename ='logging.txt',
     level = logging.INFO,
     format = '%(asctime)s - %(levelname)s - %(message)s',
     datefmt = '%Y-%m-%d %H:%M:%S'
@@ -30,7 +30,7 @@ logging.basicConfig(
 
 error_log = logging.getLogger('error_logger')
 error_log.setLevel(logging.ERROR)
-error_handler = logging.FileHandler('/tmp/error_logging.txt')
+error_handler = logging.FileHandler('error_logging.txt')
 error_handler.setLevel(logging.ERROR)
 error_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', '%Y-%m-%d %H:%M:%S')
 error_handler.setFormatter(error_formatter)
