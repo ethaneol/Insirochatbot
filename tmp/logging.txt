@@ -10,3 +10,21 @@
 2025-04-14 15:30:46 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
 2025-04-14 15:30:49 - INFO - [Chat Input] - User typed: dss
 2025-04-14 15:30:49 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:15:33 - INFO - [Chat Input] - User typed: about us
+2025-04-14 16:15:33 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:15:34 - INFO - [Chat Input] - User typed: others
+2025-04-14 16:15:34 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:33:04 - INFO - [Chat Input] - User typed: general enquiries
+2025-04-14 16:33:04 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:33:05 - INFO - [Chat Input] - User typed: hours
+2025-04-14 16:33:05 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:33:08 - INFO - [Chat Input] - User typed: address
+2025-04-14 16:33:08 - INFO - [Chatbot Response] - Replied: Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>
+2025-04-14 16:35:13 - INFO - [Chat Input] - User typed: home
+2025-04-14 16:35:13 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:35:15 - INFO - [Chat Input] - User typed: frequently asked questions
+2025-04-14 16:35:15 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:35:16 - INFO - [Chat Input] - User typed: starhub faq
+2025-04-14 16:35:16 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:35:18 - INFO - [Chat Input] - User typed: still require more help?
+2025-04-14 16:35:18 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
