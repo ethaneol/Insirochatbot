@@ -9,7 +9,12 @@ from flask_limiter.util import get_remote_address
 from werkzeug.middleware.proxy_fix import ProxyFix
 import logging
 from datetime import datetime
+import os
 
+is_vercel = os.getenv('VERCEL') is not None
+
+log_file_path = '/tmp/logging.txt' if is_vercel else 'logging.txt'
+error_log_path = '/tmp/error_logging.txt' if is_vercel else 'error_logging.txt'
 
 app = Flask(__name__)
 CORS(app)
