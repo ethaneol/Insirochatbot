@@ -172,8 +172,9 @@ option_responses = {
 
     'full time': 'null',
 
-    'part time': 'we are currently hiring part timers to aid us in manning roadshows! <br><br>'
-                 'flexible working hours and choice of pay!',
+    'part time': 'We are currently hiring part timers to aid us in manning roadshows! <br><br>'
+                 'Flexible working hours and choice of pay! <br><br>'
+                 'Up to <span style="font-weight: bold">$16/h</span>!!!',
 }
 
 @app.after_request
