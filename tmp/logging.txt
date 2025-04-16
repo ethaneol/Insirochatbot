@@ -1,0 +1,68 @@
+2025-04-14 15:15:07 - INFO - [Chat Input] - User typed: general enquiries
+2025-04-14 15:15:07 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 15:15:10 - INFO - [Chat Input] - User typed: hi
+2025-04-14 15:15:10 - INFO - [Chatbot Response] - Replied: Hi!
+2025-04-14 15:26:00 - INFO - [Chat Input] - User typed: frequently asked questions
+2025-04-14 15:26:00 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 15:30:43 - INFO - [Chat Input] - User typed: home
+2025-04-14 15:30:43 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 15:30:46 - INFO - [Chat Input] - User typed: about us
+2025-04-14 15:30:46 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 15:30:49 - INFO - [Chat Input] - User typed: dss
+2025-04-14 15:30:49 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:15:33 - INFO - [Chat Input] - User typed: about us
+2025-04-14 16:15:33 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:15:34 - INFO - [Chat Input] - User typed: others
+2025-04-14 16:15:34 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:33:04 - INFO - [Chat Input] - User typed: general enquiries
+2025-04-14 16:33:04 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:33:05 - INFO - [Chat Input] - User typed: hours
+2025-04-14 16:33:05 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:33:08 - INFO - [Chat Input] - User typed: address
+2025-04-14 16:33:08 - INFO - [Chatbot Response] - Replied: Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>
+2025-04-14 16:35:13 - INFO - [Chat Input] - User typed: home
+2025-04-14 16:35:13 - INFO - [Chatbot Response] - Replied: Sorry I didn't quite get that
+2025-04-14 16:35:15 - INFO - [Chat Input] - User typed: frequently asked questions
+2025-04-14 16:35:15 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:35:16 - INFO - [Chat Input] - User typed: starhub faq
+2025-04-14 16:35:16 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-14 16:35:18 - INFO - [Chat Input] - User typed: still require more help?
+2025-04-14 16:35:18 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:34:47 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:34:47 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:34:50 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:34:50 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:35:31 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:35:31 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:35:32 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:35:32 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:36:05 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:36:05 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:36:05 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:36:05 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:36:23 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:36:23 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:36:42 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:36:42 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:36:42 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:36:42 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:37:07 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:37:07 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:37:08 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:37:08 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:37:31 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:37:31 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:37:31 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:37:31 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:37:56 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:37:56 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:37:57 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:37:57 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that
+2025-04-16 14:38:06 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:38:06 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:38:07 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:38:07 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:38:19 - INFO - [Chat Input] - User typed: we are hiring!
+2025-04-16 14:38:19 - INFO - [Chatbot Response] - Replied: Could you rephrase that?
+2025-04-16 14:38:19 - INFO - [Chat Input] - User typed: full time
+2025-04-16 14:38:19 - INFO - [Chatbot Response] - Replied: Sorry, I didn't quite get that

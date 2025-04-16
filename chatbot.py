@@ -170,7 +170,7 @@ option_responses = {
     'interested?': 'Drop your CV at <br>'
                    '<a href="mailto:normila@insiro.com" target="_blank">normila@insiro.com</a>',
 
-    'full time': 'null',
+    'full time': '<img src="static/join.jpg" style="max-width: 90%;">',
 
     'part time': 'We are currently hiring part timers to aid us in manning roadshows! <br><br>'
                  'Flexible working hours and choice of pay! <br><br>'
