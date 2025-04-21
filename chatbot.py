@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory, session, request
+from flask import Flask, request, jsonify, render_template, send_from_directory, session
 from nltk.chat.util import Chat, reflections
 import random
 from flask_cors import CORS
