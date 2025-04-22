@@ -119,7 +119,7 @@ main_responses = {
     'promotions': "Check out our latest promotions below!",
     'frequently asked questions': "Here are some common questions we receive.",
     'join us': "Looking for a career with us? See the details below.",
-    'we are hiring!': "We are hiring talented individuals as of now!"
+    'we are hiring!': "More details below!"
 }
 
 option_responses = {
