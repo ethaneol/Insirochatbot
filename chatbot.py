@@ -191,11 +191,7 @@ def apply_csp_talisman(response):
         'frame-src': ['https://www.google.com', 'https://www.gstatic.com'],
         'object-src': ['\'none\'']
     }
-
-
-def secure_headers(response):
-    response.headers['X-Frame Options'] = 'DENY'
-    response.headers['X-Content Options'] = 'nosniff'
+    response.headers['Content-Security-Policy'] = talisman.content_security_policy_string(csp_policy)
     return response
 
 @app.route('/')
