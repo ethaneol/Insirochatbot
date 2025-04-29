@@ -10,12 +10,10 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 import logging
 from datetime import datetime
 import os
-from flask_talisman import Talisman
 
 app = Flask(__name__)
 CORS(app)
 csrf = CSRFProtect(app) #black balls programs
-talisman = Talisman(app)
 
 limiter = Limiter(key_func=get_remote_address)
 limiter.init_app(app)
@@ -180,18 +178,22 @@ option_responses = {
 }
 
 @app.after_request
-def apply_csp_talisman(response):
-    csp_policy = {
-        'default-src': ['\'self\''],
-        'script-src': ['\'self\'', 'https://www.google.com', 'https://www.gstatic.com', '\'unsafe-inline\''],
-        'style-src': ['\'self\'', 'https://fonts.googleapis.com', '\'unsafe-inline\''],
-        'img-src': ['\'self\'', 'data:'],
-        'font-src': ['\'self\'', 'https://fonts.gstatic.com'],
-        'connect-src': ['\'self\''],
-        'frame-src': ['https://www.google.com', 'https://www.gstatic.com'],
-        'object-src': ['\'none\'']
-    }
-    response.headers['Content-Security-Policy'] = talisman.content_security_policy_string(csp_policy)
+def apply_csp(response):
+    response.headers['Content-Security-Policy'] = (
+        "default-src: 'self';"
+        "script-src: 'self' https://www.google.com https://www.gstatic.com 'unsafe-inline';"
+        "style-src 'self' https://fonts.googleapis.com 'unsafe-inline';"
+        "img-src: 'self' data:;"
+        "font-src 'self' https://fonts.gstatic.com;;"
+        "connect-src: 'self';"
+        "frame-src: https://www.google.com https://www.gstatic.com;"
+        "object-src: 'none'"
+    )
+    return response
+
+def secure_headers(response):
+    response.headers['X-Frame Options'] = 'DENY'
+    response.headers['X-Content Options'] = 'nosniff'
     return response
 
 @app.route('/')
