@@ -124,7 +124,7 @@ main_responses = {
 
 option_responses = {
     'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> <br> \n'
-                  'Contact us at <a href="tel:65 63231773" target="_current">+65 63231773</a> <br> \n'
+                  'Contact us at <a href="tel:65 63231773" target="_current">+65 63231773</a> <br><br> \n'
                   '<a href="https://www.instagram.com/insiropteltd/" target="_blank"><img src="/static/instagram.png" class="socmed-icon"></a>'
                   '<a href="https://wa.me/6583780991?text=I%20am%20interested%20in%20your%20broadband%20promotions" target="_blank"><img src="/static/whatsapp.png" class="socmed-icon"></a>'
                   '<a href="https://t.me/StarHubBTO" target="_blank"><img src="/static/telegram.png" class="socmed-icon"></a>'
