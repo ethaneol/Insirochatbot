@@ -154,7 +154,7 @@ option_responses = {
                 '<a href="https://linktr.ee/insiro" target="_blank"><img src="/static/link.png" class="socmed-icon"></a>',
 
 
-    'promo info': 'View <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Broaband</a> or <a href="https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html" target="_blank">HomeHub</a>',
+    'promo info': 'View <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Broadband</a> or <a href="https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html" target="_blank">HomeHub</a>',
 
     'eligibility': 'View <a href="https://www.starhub.com/personal/support/article.html?id=uaIp0zAzAo8LInqU2PmWHA" target="_blank">Eligibility</a>',
 
