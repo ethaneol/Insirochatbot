@@ -95,7 +95,7 @@ button_options = {
     'home': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours'],
-    'about us': ['Awards and Recognitions', 'Others'],
+    'about us': ['Awards and Recognitions', 'Social media contact'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim'],
     'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
@@ -124,11 +124,17 @@ main_responses = {
 
 option_responses = {
     'contact us': 'Email us at <a href="mailto:cso.insiro.com" target="_blank">cso@insiro.com</a> <br> \n'
-                  'Contact us at <a href="tel:65 6323 1773" target="_current">+65-6323-1773</a> \n',
+                  'Contact us at <a href="tel:65 63231773" target="_current">+65 63231773</a> \n'
+                  '<a href="https://www.instagram.com/insiropteltd/" target="_blank"><img src="/static/instagram.png" class="socmed-icon"></a>'
+                  '<a href="https://wa.me/6583780991?text=I%20am%20interested%20in%20your%20broadband%20promotions" target="_blank"><img src="/static/whatsapp.png" class="socmed-icon"></a>'
+                  '<a href="https://t.me/StarHubBTO" target="_blank"><img src="/static/telegram.png" class="socmed-icon"></a>'
+                  '<a href="https://insiro.com" target="_blank"><img src="/static/internet.png" class="socmed-icon"></a>'
+                  '<a href="https://linktr.ee/insiro" target="_blank"><img src="/static/link.png" class="socmed-icon"></a>'
+    ,
 
     'address': 'Find us at <a href="https://maps.app.goo.gl/ce1hSqtKcUzyuJak6" target="_blank">49 Tannery Lane</a>' ,
 
-    'hours': 'We are open from 9 AM to 6 PM',
+    'hours': 'Our office is open from 9 to 6pm',
 
     'awards and recognitions': '<img src="/static/masterpartner.jpg" alt="Xavier" style="max-width: 80%; border-radius: 5px"> \n <br>'
                                '<p>'
@@ -140,7 +146,7 @@ option_responses = {
                                    '• Starhub Top Deal (Core Partner) for Q1 to Q3 of Year 2021'
                                '</p>',
 
-    'others': 'View our social media profiles below!<br> <br>'
+    'social media contact': 'View our social media profiles below!<br> <br>'
                 '<a href="https://www.instagram.com/insiropteltd/" target="_blank"><img src="/static/instagram.png" class="socmed-icon"></a>'
                 '<a href="https://wa.me/6583780991?text=I%20am%20interested%20in%20your%20broadband%20promotions" target="_blank"><img src="/static/whatsapp.png" class="socmed-icon"></a>'
                 '<a href="https://t.me/StarHubBTO" target="_blank"><img src="/static/telegram.png" class="socmed-icon"></a>'
@@ -148,9 +154,9 @@ option_responses = {
                 '<a href="https://linktr.ee/insiro" target="_blank"><img src="/static/link.png" class="socmed-icon"></a>',
 
 
-    'promo info': 'This promo is for new StarHub broadband users',
+    'promo info': 'View <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Broaband</a> or <a href="https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html" target="_blank">HomeHub</a>',
 
-    'eligibility': 'You must be out of contract!',
+    'eligibility': 'View <a href="https://www.starhub.com/personal/support/article.html?id=uaIp0zAzAo8LInqU2PmWHA" target="_blank">Eligibility</a>',
 
     'how to claim': 'Type contact to claim!',
 
