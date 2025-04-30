@@ -89,6 +89,13 @@ userInput.addEventListener("keypress", function(event) {
     }
 });
 
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "/") {
+        event.preventDefault();
+        userInput.click();
+    }
+});
+
 function displayNewOptions(options) {
     const quickRepliesDiv = document.createElement('div');
     quickRepliesDiv.classList.add('quick-replies');
