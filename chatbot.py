@@ -86,9 +86,9 @@ pairs = [
     ],
     [
         r".*tv pas(ses|s).*|.*bundles.*|.*channels.*|.*epl.*|.*english premier league.*|.*premier league.*",
-        ["View our EPL bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/premier-league.html'>here!</a><br><br>"
-         "Alternatively, view our TV Passes <a target='_blank' href='https://www.starhub.com/personal/tvplus/passes.html'>here!</a><br><br>"
-         "View our Homehub bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html'>here!</a><br>"]
+        ["View our EPL bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/premier-league.html'>here!</a>\n\n"
+         "Alternatively, view our TV Passes <a target='_blank' href='https://www.starhub.com/personal/tvplus/passes.html'>here!</a>\n\n"
+         "View our Homehub bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html'>here!</a>\n"]
     ],
     ]
 
