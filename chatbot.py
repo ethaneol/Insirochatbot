@@ -83,6 +83,10 @@ pairs = [
     [
         r".*insiro.*",
         ["INSIRO is a world-class internet solutions provider with a specialized team of IT professionals. We are fully committed to deliver excellence in IT services. With a wide range of IT products, INSIRO is dedicated to provide the most comprehensive and customized solutions for our clients."]
+    ],
+    [
+        r".*starhub tv.*|.*homehub.*|.*epl.*|.*premier league.*|.*channe(l|ls).*|.*tv.*|.*bundl(e|es).*",
+        ["Here are our <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html'>Homehub TV bundles!</a>"],
     ]
     ]
 
