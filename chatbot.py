@@ -85,10 +85,6 @@ pairs = [
         ["INSIRO is a world-class internet solutions provider with a specialized team of IT professionals. We are fully committed to deliver excellence in IT services. With a wide range of IT products, INSIRO is dedicated to provide the most comprehensive and customized solutions for our clients."]
     ],
     [
-        r".*starhub tv.*|.*homehub.*|.*epl.*|.*premier league.*|.*channe(l|ls).*|.*tv.*|.*bundl(e|es).*",
-        ["Here are our <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html' target='_blank'>Homehub TV bundles!</a> (EPL included)"],
-    ],
-    [
         r"",
         [""]
     ],
@@ -101,14 +97,17 @@ button_options = {
     'menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'main': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'home': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
+    'tv': ['Homehub', 'TV Passes'],
+    'channels': ['Homehub', 'TV Passes'],
+    'channel': ['Homehub', 'TV Passes'],
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
-    'general enquiries': ['Contact Us', 'Address', 'Hours'],
-    'about us': ['Awards and Recognitions', 'Social media contact'],
-    'services': ['Promo Info', 'Eligibility', 'How to Claim'],
-    'promotions': ['Current Promos', 'Past Promos', 'Future Promos'],
-    'frequently asked questions': ['StarHub FAQ', 'Still require more help?'],
-    'join us': ['Job Scope', 'Interested?'],
-    'we are hiring!': ['Part Time', 'Full Time', 'Interested?']
+    'general enquiries': ['Contact Us', 'Address', 'Hours', 'Home'],
+    'about us': ['Awards and Recognitions', 'Social Media Contacts', 'Home'],
+    'services': ['Promo Info', 'Eligibility', 'How to Claim', 'Home'],
+    'promotions': ['Current Promos', 'Past Promos', 'Future Promos', 'Home'],
+    'frequently asked questions': ['StarHub FAQ', 'Still require more help?', 'Home'],
+    'join us': ['Job Scope', 'Interested?', 'Home'],
+    'we are hiring!': ['Part Time', 'Full Time', 'Interested?', 'Home']
 }
 
 main_responses = {
@@ -127,7 +126,9 @@ main_responses = {
     'promotions': "Check out our latest promotions below!",
     'frequently asked questions': "Here are some common questions we receive.",
     'join us': "Looking for a career with us? See the details below.",
-    'we are hiring!': "More details below!"
+    'we are hiring!': "More details below!",
+    'homehub': "View our Homehub bundles <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html' target='_blank'>here!</a>",
+    'tv passes': "Find out more about our TV Passes <a href='https://www.starhub.com/personal/tvplus/passes.html'>here!</a>"
 }
 
 option_responses = {
