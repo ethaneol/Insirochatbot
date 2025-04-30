@@ -84,6 +84,12 @@ pairs = [
         r".*insiro.*",
         ["INSIRO is a world-class internet solutions provider with a specialized team of IT professionals. We are fully committed to deliver excellence in IT services. With a wide range of IT products, INSIRO is dedicated to provide the most comprehensive and customized solutions for our clients."]
     ],
+    [
+        r".*tv pas(ses|s).*|.*bundles.*|.*channels.*|.*epl.*|.*english premier league.*|.*premier league.*",
+        ["View our EPL bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/premier-league.html'>here!</a> <br><br>"
+         "Alternatively, view our TV Passes <a target='_blank' href='https://www.starhub.com/personal/tvplus/passes.html'>here!</a> <br><br>"
+         "View our Homehub bundles <a target='_blank' href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html'>here!</a> <br>"]
+    ],
     ]
 
 
@@ -125,6 +131,7 @@ main_responses = {
     'join us': "Looking for a career with us? See the details below.",
     'we are hiring!': "More details below!",
     'tv options': "Check out our TV bundles and TV passes below!",
+    'tv packages': "Check out our TV bundles and TV passes below!",
 }
 
 option_responses = {
