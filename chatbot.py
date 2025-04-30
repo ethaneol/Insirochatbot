@@ -189,7 +189,7 @@ option_responses = {
 
     'homehub': "View our Homehub bundles <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html' target='_blank'>here!</a>",
 
-    'tv passes': "Find out more about our TV Passes <a href='https://www.starhub.com/personal/tvplus/passes.html'>here!</a>"
+    'tv passes': "Find out more about our TV Passes <a href='https://www.starhub.com/personal/tvplus/passes.html' target='_blank'>here!</a>"
 }
 
 @app.after_request
