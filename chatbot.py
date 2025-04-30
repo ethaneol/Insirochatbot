@@ -86,7 +86,7 @@ pairs = [
     ],
     [
         r".*starhub tv.*|.*homehub.*|.*epl.*|.*premier league.*|.*channe(l|ls).*|.*tv.*|.*bundl(e|es).*",
-        ["Here are our <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html' target='_blank'>Homehub TV bundles!</a>(EPL included)"],
+        ["Here are our <a href='https://www.starhub.com/personal/bundles/homehub-plus/ultraspeed.html' target='_blank'>Homehub TV bundles!</a> (EPL included)"],
     ],
     [
         r"",
