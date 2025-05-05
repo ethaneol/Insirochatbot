@@ -70,7 +70,7 @@ pairs = [
     ],
     [
         r".*address.*|.*office.*|.*locat(e|ed|ion).*|.*company.*",
-        ["Our office is located at <a href='maps.google.com/05' target='_blank' style='color: white'>49 Tannery Lane</a>"]
+        ["Our office is located at <a href='https://maps.app.goo.gl/ce1hSqtKcUzyuJak6' target='_blank' style='color: white'>49 Tannery Lane</a>"]
     ],
     [
         r".*phon(e|es|ed).*|.*numbe(r|rs).*|.*hotline.*|.*contac(t|ted|).*",
