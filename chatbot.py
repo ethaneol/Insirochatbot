@@ -106,7 +106,7 @@ button_options = {
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours', 'Home'],
     'about us': ['Awards and Recognitions', 'Contact Us', 'Home'],
-    'services': ['Promo Info', 'Eligibility', 'How to Claim', 'Home'],
+    'services': ['Promo Info', 'Eligibility', 'Support', 'Home'],
     'promotions': ['Current Promos', 'TV Options', 'Home'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?', 'Home'],
     'join us': ['Job Scope', 'Interested?', 'Home'],
@@ -170,7 +170,9 @@ option_responses = {
 
     'eligibility': 'View <a href="https://www.starhub.com/personal/support/article.html?id=uaIp0zAzAo8LInqU2PmWHA" target="_blank">Eligibility</a>',
 
-    'how to claim': 'Type contact to claim!',
+    'support': '<a href="https://www.starhub.com/personal/support/article.html?id=LfNB5odcBt0mTG6Pr7GSB7">Broadband FAQ</a><br>'
+               '<a href="https://www.starhub.com/personal/support/article.html?id=Q66SLdTvjX4zxVjCxxuk09">Starhub TV Passes</a><br>'
+               '<a href="https://www.starhub.com/personal/support/article.html?id=3FI9yoq9FJ0kChsk4YONDA">Hub ID</a>',
 
     'current promos': 'View our current promos <a href="https://www.starhub.com/personal/broadband.html/#plans" target="_blank">Here!</a>',
 
