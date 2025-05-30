@@ -105,7 +105,7 @@ button_options = {
     'channel': ['Homehub', 'TV Passes'],
     'main menu': ['General Enquiries', 'About Us', 'Services', 'Promotions', 'Frequently Asked Questions', 'Join Us'],
     'general enquiries': ['Contact Us', 'Address', 'Hours', 'Home'],
-    'about us': ['Awards and Recognitions', 'Social Media Contacts', 'Home'],
+    'about us': ['Awards and Recognitions', 'Contact Us', 'Home'],
     'services': ['Promo Info', 'Eligibility', 'How to Claim', 'Home'],
     'promotions': ['Current Promos', 'TV Options', 'Home'],
     'frequently asked questions': ['StarHub FAQ', 'Still require more help?', 'Home'],
